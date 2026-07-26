@@ -1,7 +1,7 @@
-.PHONY: smoke smoke-fixtures smoke-kind kind-up kind-down help
+.PHONY: smoke smoke-fixtures smoke-kind kind-up kind-down help matrix
 
 help:
-	@echo "Targets: smoke-fixtures | kind-up | smoke-kind | smoke | kind-down"
+	@echo "Targets: smoke-fixtures | kind-up | smoke-kind | smoke | matrix | kind-down"
 
 smoke-fixtures:
 	python3 experiments/run_fixture_smoke.py
@@ -22,3 +22,6 @@ smoke-kind: kind-up
 
 smoke: smoke-fixtures smoke-kind
 	@echo "SMOKE COMPLETE"
+
+matrix: kind-up
+	python3 experiments/run_matrix.py

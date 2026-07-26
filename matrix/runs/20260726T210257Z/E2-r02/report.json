@@ -1,28 +1,20 @@
 {
   "status": "PASS",
-  "trace_id": "o2-intended-orphan-then-adopt",
-  "events": 5,
+  "trace_id": "E2-r02",
+  "events": 7,
   "violations": [],
-  "suppressions": [
-    {
-      "reason": "orphan_observed",
-      "object_key": "pod/kosv/nginx-xyz",
-      "uid": "pod-uid-3",
-      "event_index": 2,
-      "detail": "controller owner cleared; subsequent adopt may be intended"
-    }
-  ],
+  "suppressions": [],
   "notes": [
     "O1 PASS; O2 PASS",
     "Caveat: PASS does not prove absence of unobserved short-lived dual-owner states"
   ],
   "event_type_counts": {
-    "ADDED": 1,
-    "UPDATE": 3,
-    "DELETE": 1
+    "UPDATE": 7
   },
   "resource_counts": {
-    "pod": 5
+    "deployment": 2,
+    "replicaset": 2,
+    "pod": 3
   },
   "caveats": [
     "O1 is incomplete under poll/watch gaps; PASS does not prove absence of short-lived dual-owner states.",
