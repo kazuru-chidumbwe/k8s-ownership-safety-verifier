@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "trace_id": "o2-intended-orphan-then-adopt",
+  "events": 5,
+  "violations": [],
+  "notes": [
+    "O1 PASS; O2 PASS"
+  ]
+}

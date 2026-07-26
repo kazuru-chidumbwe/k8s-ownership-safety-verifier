@@ -1,0 +1,17 @@
+[
+  {
+    "case": "o1-dual-controller.jsonl",
+    "runner_exit": 0,
+    "report": "D:\\Project Atlas\\repos\\k8s-ownership-safety-verifier\\results\\smoke-o1.json"
+  },
+  {
+    "case": "o2-unintended-transfer.jsonl",
+    "runner_exit": 0,
+    "report": "D:\\Project Atlas\\repos\\k8s-ownership-safety-verifier\\results\\smoke-o2.json"
+  },
+  {
+    "case": "o2-intended-orphan-then-adopt.jsonl",
+    "runner_exit": 0,
+    "report": "D:\\Project Atlas\\repos\\k8s-ownership-safety-verifier\\results\\smoke-o2-intended.json"
+  }
+]

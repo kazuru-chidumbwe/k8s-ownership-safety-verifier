@@ -1,0 +1,17 @@
+{
+  "status": "FAIL",
+  "trace_id": "o1-dual-controller",
+  "events": 2,
+  "violations": [
+    {
+      "oracle": "O1",
+      "object_key": "pod/kosv/nginx-abc",
+      "uid": "pod-uid-1",
+      "detail": "snapshot has 2 controller=true ownerReferences",
+      "event_index": 1,
+      "previous_controller": null,
+      "new_controller": "rs-a,rs-b"
+    }
+  ],
+  "notes": []
+}

@@ -1,0 +1,17 @@
+{
+  "status": "FAIL",
+  "trace_id": "o2-unintended-transfer",
+  "events": 2,
+  "violations": [
+    {
+      "oracle": "O2",
+      "object_key": "pod/kosv/nginx-abc",
+      "uid": "pod-uid-2",
+      "detail": "ControllerRef changed A->B without intervening orphan or DELETE",
+      "event_index": 1,
+      "previous_controller": "rs-a",
+      "new_controller": "rs-b"
+    }
+  ],
+  "notes": []
+}

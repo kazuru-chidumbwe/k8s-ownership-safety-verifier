@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+.kind-state/
+# keep committed smoke evidence; ignore ad-hoc local runs
+results/local-*
+traces/local-*
