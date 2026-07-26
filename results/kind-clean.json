@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "trace_id": "SMOKE-KIND-CLEAN",
+  "events": 16,
+  "violations": [],
+  "notes": [
+    "O1 PASS; O2 PASS"
+  ]
+}
