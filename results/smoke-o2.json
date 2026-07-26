@@ -13,5 +13,17 @@
       "new_controller": "rs-b"
     }
   ],
-  "notes": []
+  "suppressions": [],
+  "notes": [],
+  "event_type_counts": {
+    "ADDED": 1,
+    "UPDATE": 1
+  },
+  "resource_counts": {
+    "pod": 2
+  },
+  "caveats": [
+    "O1 is incomplete under poll/watch gaps; PASS does not prove absence of short-lived dual-owner states.",
+    "Events are evaluated in time order; no pre-O1 dedup of same resourceVersion."
+  ]
 }

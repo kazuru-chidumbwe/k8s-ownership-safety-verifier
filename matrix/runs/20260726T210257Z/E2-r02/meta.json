@@ -1,0 +1,72 @@
+{
+  "experiment_id": "E2-r02",
+  "experiment": "E2",
+  "run": 2,
+  "delay_ms_configured": 2000,
+  "controller_restart": false,
+  "started": "2026-07-26T21:15:08.165683Z",
+  "namespace": "kosv-e2-r02",
+  "proxy_latency": {
+    "n": 30,
+    "delay_ms_configured": 2000.0,
+    "mean_ms": 2003.329,
+    "p50_ms": 2002.923,
+    "p95_ms": 2003.722,
+    "p99_ms": 2011.234,
+    "min_ms": 2002.138,
+    "max_ms": 2014.284,
+    "within_10pct": true,
+    "samples_ms": [
+      2002.138,
+      2002.287,
+      2002.543,
+      2002.572,
+      2002.67,
+      2002.69,
+      2002.712,
+      2002.732,
+      2002.738,
+      2002.762,
+      2002.819,
+      2002.841,
+      2002.849,
+      2002.849,
+      2002.921,
+      2002.925,
+      2002.926,
+      2002.934,
+      2003.008,
+      2003.016,
+      2003.053,
+      2003.138,
+      2003.223,
+      2003.283,
+      2003.312,
+      2003.603,
+      2003.622,
+      2003.666,
+      2003.767,
+      2014.284
+    ]
+  },
+  "ended": "2026-07-26T21:18:16.372953Z",
+  "fault_window": {
+    "configured_delay_ms": 2000,
+    "tc_applied": true,
+    "ended": "2026-07-26T21:18:16.372330Z",
+    "deployment_ready_pre_scale": true,
+    "deployment_ready_post_scale": true
+  },
+  "events": 7,
+  "status": "PASS",
+  "violations": 0,
+  "suppressions": 0,
+  "resource_counts": {
+    "deployment": 2,
+    "replicaset": 2,
+    "pod": 3
+  },
+  "event_type_counts": {
+    "UPDATE": 7
+  }
+}

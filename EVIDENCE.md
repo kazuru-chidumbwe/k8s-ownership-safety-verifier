@@ -38,5 +38,13 @@ make smoke-kind
 ## Not claimed
 
 - O3/O4 (belief-state)  
-- Fault-injected campaign statistics  
-- Production / multi-control-plane equivalence
+- Fault-injected campaign statistics as security findings  
+- Production / multi-control-plane equivalence  
+
+## Caveat (O1 completeness)
+
+O1 detection is **incomplete** under poll/watch gaps: a dual-owner state that exists for one revision and is immediately corrected may never appear in the trace. **PASS does not prove absence.** See report `caveats` and [`MATRIX-ANALYSIS.md`](MATRIX-ANALYSIS.md).
+
+## 20-run matrix
+
+See [`MATRIX-ANALYSIS.md`](MATRIX-ANALYSIS.md) and archive `matrix/runs/20260726T210257Z/` (20/20 PASS).
