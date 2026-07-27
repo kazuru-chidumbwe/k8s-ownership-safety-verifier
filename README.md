@@ -27,7 +27,7 @@ cd k8s-ownership-safety-verifier
 make smoke-fixtures
 ```
 
-This runs synthetic O1 FAIL, O2 FAIL, and intended-orphan PASS fixtures through the verifier. No cluster required.
+This runs synthetic O1 FAIL, O2 FAIL, and intended-orphan PASS fixtures through the verifier. No cluster required. **Dependencies:** Python 3 standard library only (see [`requirements.txt`](requirements.txt)).
 
 ### Optional Kind lab smoke
 
