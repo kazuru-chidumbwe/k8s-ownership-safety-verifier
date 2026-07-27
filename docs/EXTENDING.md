@@ -1,6 +1,6 @@
 # Extending KOSV
 
-Audience: researchers adding ownership paths or oracles. Keep SoftwarX claim discipline: instrument first, findings later.
+Audience: researchers adding ownership paths or oracles.
 
 ## Add a new ownership path (e.g. StatefulSet)
 
@@ -23,7 +23,7 @@ No verifier change is required for O1 if events already expose `owners[].control
 
 ### O3 / O4 (not implemented)
 
-O3 (controller belief ≠ API ControllerRef) and O4 (thrash under O1) require instrumentation beyond API polling. Do not mark them implemented until reconcile-time belief traces exist. SoftwarX papers may **define** them for extensibility; they must not report O3/O4 **results**.
+O3 (controller belief ≠ API ControllerRef) and O4 (thrash under O1) require instrumentation beyond API polling. Do not mark them implemented until reconcile-time belief traces exist.
 
 ## Add a fault model
 
