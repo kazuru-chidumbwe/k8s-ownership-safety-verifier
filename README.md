@@ -53,7 +53,6 @@ make matrix         # 20-run E0–E3 calibration (needs Kind)
 | [`docs/THREAT-MODEL.md`](docs/THREAT-MODEL.md) | Adversary / trust assumptions |
 | [`docs/SCOPE-ISOLATION.md`](docs/SCOPE-ISOLATION.md) | Kind lab scope / isolation |
 | [`docs/EXTENDING.md`](docs/EXTENDING.md) | Add ownership path or oracle |
-| [`docs/PRE-ANALYSIS-PLAN.md`](docs/PRE-ANALYSIS-PLAN.md) | Scale-1000 pre-analysis (Paper B; **not started until approved**) |
 | [`EVIDENCE.md`](EVIDENCE.md) | Smoke evidence summary |
 | [`MATRIX-ANALYSIS.md`](MATRIX-ANALYSIS.md) | 20-run calibration analysis |
 
