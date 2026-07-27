@@ -21,8 +21,8 @@ License: MIT
 ```bash
 git clone https://github.com/kazuru-chidumbwe/k8s-ownership-safety-verifier.git
 cd k8s-ownership-safety-verifier
-# Prefer a frozen tag when citing (example):
-# git checkout blog-kosv01-2026-07
+# Prefer a frozen SemVer tag when citing (example):
+# git checkout v0.1.0   # same tree as blog-kosv01-2026-07
 
 make smoke-fixtures
 ```
@@ -52,6 +52,7 @@ make matrix         # 20-run E0–E3 calibration (needs Kind)
 | [`docs/SCHEMA.md`](docs/SCHEMA.md) | Normalized JSONL trace schema |
 | [`docs/THREAT-MODEL.md`](docs/THREAT-MODEL.md) | Adversary / trust assumptions |
 | [`docs/evidence/fault-reach-2026-07-27/`](docs/evidence/fault-reach-2026-07-27/) | Primary evidence: eth0 netem path reach |
+| [`docs/TAGS.md`](docs/TAGS.md) | SemVer + citation pins |
 | [`CHANGELOG.md`](CHANGELOG.md) | SemVer history |
 | [`REPRODUCTION.md`](REPRODUCTION.md) | Independent cold-reproduction record |
 | [`docs/SCOPE-ISOLATION.md`](docs/SCOPE-ISOLATION.md) | Kind lab scope / isolation |
@@ -73,15 +74,14 @@ make matrix         # 20-run E0–E3 calibration (needs Kind)
 
 ## How to cite
 
-Cite a frozen git tag (and later the SoftwareX article / Zenodo DOI when available), not `main`:
+Cite a frozen SemVer tag (and later the SoftwareX article / Zenodo DOI when available), not `main`.
+Essay pin `blog-kosv01-2026-07` aliases the same tree — see [`docs/TAGS.md`](docs/TAGS.md).
 
 ```text
 Seke Kazuru. KOSV: Kubernetes Ownership Safety Verifier.
 https://github.com/kazuru-chidumbwe/k8s-ownership-safety-verifier
 Tag: v0.1.0
 ```
-
-(Blog pin `blog-kosv01-2026-07` remains valid for the KOSV-01 post; prefer `v0.1.0` for SoftwarX.)
 
 ## Claim discipline
 
