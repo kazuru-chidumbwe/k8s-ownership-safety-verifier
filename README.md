@@ -1,20 +1,20 @@
 # KOSV — Kubernetes Ownership Safety Verifier
 
-**Research instrument** for measuring Kubernetes **ownership safety** (`ownerReferences` / ControllerRef) with explicit oracles, normalized traces, and calibrated fault injection.
+Research instrument for measuring Kubernetes ownership safety (`ownerReferences` / ControllerRef) with explicit oracles, normalized traces, and calibrated fault injection.
 
-KOSV is aimed at **researchers** studying controller / ownership correctness under controlled conditions. It is **not** an operator dashboard and does **not** claim that Kubernetes is safe or unsafe.
+KOSV is aimed at researchers studying controller / ownership correctness under controlled conditions. It is not an operator dashboard and does not claim that Kubernetes is safe or unsafe.
 
 ## Oracles (v0)
 
 | Oracle | Predicate | Status |
 | --- | --- | --- |
-| **O1** Snapshot SCOI | At any recorded event, `count(controller=true) ≤ 1` | Implemented |
-| **O2** Unintended transfer | ControllerRef A→B on same UID without expected orphan/DELETE | Implemented |
-| **O3** Observation mismatch | Controller belief ≠ API ControllerRef | Defined, **not implemented** |
-| **O4** Behavioral thrash | Ownership fight / thrash while O1 holds | Defined, **not implemented** |
+| O1 Snapshot SCOI | At any recorded event, `count(controller=true) ≤ 1` | Implemented |
+| O2 Unintended transfer | ControllerRef A→B on same UID without expected orphan/DELETE | Implemented |
+| O3 Observation mismatch | Controller belief ≠ API ControllerRef | Defined, not implemented |
+| O4 Behavioral thrash | Ownership fight / thrash while O1 holds | Defined, not implemented |
 
-Author: [Seke Kazuru](https://orcid.org/0009-0002-4099-1059) · `kazuruuni@gmail.com`  
-License: **MIT**
+
+License: MIT
 
 ## One-command demo (offline, ≪10 minutes)
 
@@ -27,7 +27,7 @@ cd k8s-ownership-safety-verifier
 make smoke-fixtures
 ```
 
-This runs synthetic O1 FAIL, O2 FAIL, and intended-orphan PASS fixtures through the verifier. No cluster required. **Dependencies:** Python 3 standard library only (see [`requirements.txt`](requirements.txt)).
+This runs synthetic O1 FAIL, O2 FAIL, and intended-orphan PASS fixtures through the verifier. No cluster required. Dependencies: Python 3 standard library only (see [`requirements.txt`](requirements.txt)).
 
 ### Optional Kind lab smoke
 
@@ -70,7 +70,7 @@ make matrix         # 20-run E0–E3 calibration (needs Kind)
 
 ## How to cite
 
-Cite a **frozen git tag** (and later the SoftwareX article / Zenodo DOI when available), not `main`:
+Cite a frozen git tag (and later the SoftwareX article / Zenodo DOI when available), not `main`:
 
 ```text
 Seke Kazuru. KOSV: Kubernetes Ownership Safety Verifier.
@@ -80,6 +80,6 @@ Tag: blog-kosv01-2026-07
 
 ## Claim discipline
 
-- Smoke + matrix results validate the **instrument**.
-- They are **not** Kubernetes vulnerability findings.
+- Smoke + matrix results validate the instrument.
+- They are not Kubernetes vulnerability findings.
 - Poll-based collection is incomplete; PASS ≠ proof of absence.
