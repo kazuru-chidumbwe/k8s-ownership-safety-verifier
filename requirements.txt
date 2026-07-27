@@ -1,0 +1,22 @@
+# Python dependencies
+
+## Offline smoke (`make smoke-fixtures`)
+
+Requires **Python 3** only. The fixture smoke path uses the Python standard library
+(`json`, `pathlib`, `subprocess`, `sys`, `dataclasses`, `argparse`). No third-party
+packages are required.
+
+```bash
+python3 --version   # 3.10+ recommended
+make smoke-fixtures
+```
+
+## Kind / matrix targets (`make smoke-kind`, `make matrix`)
+
+Same: Python 3 standard library for the runners. External tools (not pip packages):
+
+- Docker
+- kind
+- kubectl
+
+Optional host-side delay self-tests under `injector/` likewise use the standard library.
