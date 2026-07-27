@@ -1,81 +1,86 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="960" height="560" viewBox="0 0 960 560">
-  <!-- KOSV architecture — no figure title in artwork; caption lives in manuscript -->
+  <!-- KOSV architecture — coloured SoftwarX figure; no title in artwork -->
   <rect width="960" height="560" fill="#ffffff"/>
 
   <defs>
-    <marker id="arrow" markerWidth="9" markerHeight="9" refX="7" refY="3.5" orient="auto">
-      <path d="M0,0 L7,3.5 L0,7 Z" fill="#111827"/>
+    <marker id="arrowBlue" markerWidth="9" markerHeight="9" refX="7" refY="3.5" orient="auto">
+      <path d="M0,0 L7,3.5 L0,7 Z" fill="#2563eb"/>
+    </marker>
+    <marker id="arrowAmber" markerWidth="9" markerHeight="9" refX="7" refY="3.5" orient="auto">
+      <path d="M0,0 L7,3.5 L0,7 Z" fill="#d97706"/>
+    </marker>
+    <marker id="arrowTeal" markerWidth="9" markerHeight="9" refX="7" refY="3.5" orient="auto">
+      <path d="M0,0 L7,3.5 L0,7 Z" fill="#0f766e"/>
+    </marker>
+    <marker id="arrowGreen" markerWidth="9" markerHeight="9" refX="7" refY="3.5" orient="auto">
+      <path d="M0,0 L7,3.5 L0,7 Z" fill="#15803d"/>
     </marker>
     <marker id="arrowGray" markerWidth="9" markerHeight="9" refX="7" refY="3.5" orient="auto">
-      <path d="M0,0 L7,3.5 L0,7 Z" fill="#4b5563"/>
+      <path d="M0,0 L7,3.5 L0,7 Z" fill="#475569"/>
+    </marker>
+    <marker id="arrowInk" markerWidth="9" markerHeight="9" refX="7" refY="3.5" orient="auto">
+      <path d="M0,0 L7,3.5 L0,7 Z" fill="#334155"/>
     </marker>
   </defs>
 
   <!-- Workload -->
-  <rect x="48" y="48" width="200" height="72" rx="4" fill="#f9fafb" stroke="#111827" stroke-width="1.5"/>
-  <text x="148" y="78" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#111827">Workload generator</text>
-  <text x="148" y="98" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#374151">Deployment create / scale</text>
+  <rect x="48" y="48" width="200" height="72" rx="4" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="148" y="78" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#1e293b">Workload generator</text>
+  <text x="148" y="98" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#475569">Deployment create / scale</text>
 
   <!-- Fault injector -->
-  <rect x="288" y="48" width="220" height="72" rx="4" fill="#f9fafb" stroke="#111827" stroke-width="1.5"/>
-  <text x="398" y="74" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#111827">Fault injector</text>
-  <text x="398" y="94" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#374151">tc netem on eth0 · CM restart</text>
-  <text x="398" y="110" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#6b7280">collector↔API path only</text>
+  <rect x="288" y="48" width="220" height="72" rx="4" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+  <text x="398" y="74" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#1e293b">Fault injector</text>
+  <text x="398" y="94" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#475569">tc netem on eth0 · CM restart</text>
+  <text x="398" y="110" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#64748b">collector↔API path only</text>
 
   <!-- Kind cluster box -->
-  <rect x="48" y="168" width="460" height="200" rx="4" fill="#f8fafc" stroke="#111827" stroke-width="1.5"/>
-  <text x="278" y="194" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#111827">Kind laboratory cluster (v1.31.x)</text>
-  <text x="278" y="214" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#374151">ownerReferences / ControllerRef</text>
+  <rect x="48" y="168" width="460" height="200" rx="4" fill="#ccfbf1" stroke="#0f766e" stroke-width="1.6"/>
+  <text x="278" y="194" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#0f766e">Kind laboratory cluster (v1.31.x)</text>
+  <text x="278" y="214" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#475569">ownerReferences / ControllerRef</text>
 
   <!-- Inner: API -->
-  <rect x="80" y="236" width="160" height="48" rx="3" fill="#ffffff" stroke="#111827" stroke-width="1.25"/>
-  <text x="160" y="265" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="600" fill="#111827">API server</text>
+  <rect x="80" y="236" width="160" height="48" rx="3" fill="#ffffff" stroke="#0f766e" stroke-width="1.25"/>
+  <text x="160" y="265" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="600" fill="#1e293b">API server</text>
 
   <!-- Inner: CM -->
-  <rect x="300" y="236" width="180" height="48" rx="3" fill="#ffffff" stroke="#111827" stroke-width="1.25"/>
-  <text x="390" y="258" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="600" fill="#111827">kube-controller-manager</text>
-  <text x="390" y="274" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#6b7280">→ API via lo (not eth0)</text>
+  <rect x="300" y="236" width="180" height="48" rx="3" fill="#ffffff" stroke="#0f766e" stroke-width="1.25"/>
+  <text x="390" y="258" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="600" fill="#1e293b">kube-controller-manager</text>
+  <text x="390" y="274" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#64748b">→ API via lo (not eth0)</text>
 
   <!-- eth0 note -->
-  <rect x="80" y="308" width="400" height="40" rx="3" fill="#ffffff" stroke="#6b7280" stroke-width="1" stroke-dasharray="4 3"/>
-  <text x="280" y="333" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#374151">eth0 tc netem delays host kubectl ↔ API — not CM informer path</text>
+  <rect x="80" y="308" width="400" height="40" rx="3" fill="#fff7ed" stroke="#c2410c" stroke-width="1" stroke-dasharray="4 3"/>
+  <text x="280" y="333" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#475569">eth0 tc netem delays host kubectl ↔ API — not CM informer path</text>
 
   <!-- Pipeline column -->
-  <rect x="580" y="48" width="320" height="56" rx="4" fill="#f9fafb" stroke="#111827" stroke-width="1.5"/>
-  <text x="740" y="82" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#111827">Synthetic fixtures (offline)</text>
+  <rect x="580" y="48" width="320" height="56" rx="4" fill="#f1f5f9" stroke="#334155" stroke-width="1.5"/>
+  <text x="740" y="82" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#1e293b">Synthetic fixtures (offline)</text>
 
-  <rect x="580" y="140" width="320" height="56" rx="4" fill="#f9fafb" stroke="#111827" stroke-width="1.5"/>
-  <text x="740" y="166" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#111827">Trace collector</text>
-  <text x="740" y="184" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#374151">host kubectl poll</text>
+  <rect x="580" y="140" width="320" height="56" rx="4" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="740" y="166" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#1e293b">Trace collector</text>
+  <text x="740" y="184" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#475569">host kubectl poll</text>
 
-  <rect x="580" y="228" width="320" height="56" rx="4" fill="#f9fafb" stroke="#111827" stroke-width="1.5"/>
-  <text x="740" y="262" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#111827">Event normalizer → JSONL</text>
+  <rect x="580" y="228" width="320" height="56" rx="4" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="740" y="262" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#1e293b">Event normalizer → JSONL</text>
 
-  <rect x="580" y="316" width="320" height="56" rx="4" fill="#f3f4f6" stroke="#111827" stroke-width="1.5"/>
-  <text x="740" y="342" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#111827">Verifier (O1 / O2)</text>
-  <text x="740" y="360" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#374151">O3 / O4 defined, not implemented</text>
+  <rect x="580" y="316" width="320" height="56" rx="4" fill="#dcfce7" stroke="#15803d" stroke-width="1.5"/>
+  <text x="740" y="342" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#1e293b">Verifier (O1 / O2)</text>
+  <text x="740" y="360" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#475569">O3 / O4 defined, not implemented</text>
 
-  <rect x="580" y="404" width="320" height="48" rx="4" fill="#f9fafb" stroke="#111827" stroke-width="1.5"/>
-  <text x="740" y="433" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#111827">report.json</text>
+  <rect x="580" y="404" width="320" height="48" rx="4" fill="#f1f5f9" stroke="#334155" stroke-width="1.5"/>
+  <text x="740" y="433" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#1e293b">report.json</text>
 
-  <!-- Arrows top into Kind -->
-  <line x1="148" y1="120" x2="148" y2="168" stroke="#111827" stroke-width="1.5" marker-end="url(#arrow)"/>
-  <line x1="398" y1="120" x2="398" y2="168" stroke="#111827" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <!-- Arrows -->
+  <line x1="148" y1="120" x2="148" y2="168" stroke="#2563eb" stroke-width="1.5" marker-end="url(#arrowBlue)"/>
+  <line x1="398" y1="120" x2="398" y2="168" stroke="#d97706" stroke-width="1.5" marker-end="url(#arrowAmber)"/>
+  <line x1="508" y1="268" x2="580" y2="168" stroke="#0f766e" stroke-width="1.5" marker-end="url(#arrowTeal)"/>
+  <path d="M900 104 V340 H900" fill="none" stroke="#475569" stroke-width="1.25" stroke-dasharray="5 4" marker-end="url(#arrowGray)"/>
+  <text x="908" y="220" font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#475569">smoke</text>
+  <line x1="740" y1="104" x2="740" y2="140" stroke="#334155" stroke-width="1.5" marker-end="url(#arrowInk)"/>
+  <line x1="740" y1="196" x2="740" y2="228" stroke="#2563eb" stroke-width="1.5" marker-end="url(#arrowBlue)"/>
+  <line x1="740" y1="284" x2="740" y2="316" stroke="#2563eb" stroke-width="1.5" marker-end="url(#arrowBlue)"/>
+  <line x1="740" y1="372" x2="740" y2="404" stroke="#15803d" stroke-width="1.5" marker-end="url(#arrowGreen)"/>
 
-  <!-- Kind to collector -->
-  <line x1="508" y1="268" x2="580" y2="168" stroke="#111827" stroke-width="1.5" marker-end="url(#arrow)"/>
-
-  <!-- Fixtures to verifier -->
-  <path d="M900 104 V340 H900" fill="none" stroke="#4b5563" stroke-width="1.25" stroke-dasharray="5 4" marker-end="url(#arrowGray)"/>
-  <text x="908" y="220" font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#4b5563">smoke</text>
-
-  <!-- Pipeline vertical -->
-  <line x1="740" y1="104" x2="740" y2="140" stroke="#111827" stroke-width="1.5" marker-end="url(#arrow)"/>
-  <line x1="740" y1="196" x2="740" y2="228" stroke="#111827" stroke-width="1.5" marker-end="url(#arrow)"/>
-  <line x1="740" y1="284" x2="740" y2="316" stroke="#111827" stroke-width="1.5" marker-end="url(#arrow)"/>
-  <line x1="740" y1="372" x2="740" y2="404" stroke="#111827" stroke-width="1.5" marker-end="url(#arrow)"/>
-
-  <!-- Footnote strip without "Fig." -->
-  <text x="48" y="520" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#4b5563">JSONL schema: docs/SCHEMA.md · Kind laboratory only · cite frozen tag v0.1.0</text>
-  <text x="48" y="540" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#4b5563">Calibration outcomes validate the instrument; they are not Kubernetes defect findings.</text>
+  <text x="48" y="520" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#475569">JSONL schema: docs/SCHEMA.md · Kind laboratory only · cite frozen tag v0.1.0</text>
+  <text x="48" y="540" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#475569">Calibration outcomes validate the instrument; they are not Kubernetes defect findings.</text>
 </svg>
