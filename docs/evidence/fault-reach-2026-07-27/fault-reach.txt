@@ -1,0 +1,116 @@
+# Fault reach verification — Kind kosv
+# captured: 2026-07-27T11:39:23Z
+# host: kosv-lab-01
+# fault: tc qdisc replace dev eth0 root netem delay 500ms
+
+## controller-manager.conf (server)
+5:    server: https://172.18.0.2:6443
+
+## scheduler.conf (server)
+5:    server: https://172.18.0.2:6443
+
+## interfaces
+lo               UNKNOWN        127.0.0.1/8 ::1/128 
+eth0@if10        UP             172.18.0.2/16 fc00:f853:ccd:e793::2/64 fe80::46a:16ff:fe9b:8601/64 
+veth13976f52@if2 UP             10.244.0.1/32 fe80::4816:acff:fe44:a5dd/64 
+vethae8b57a6@if2 UP             10.244.0.1/32 fe80::b01e:d9ff:fe77:a70e/64 
+veth7a53c1b7@if2 UP             10.244.0.1/32 fe80::f885:f2ff:fe2f:75e6/64 
+vetha7c03ed9@if2 UP             10.244.0.1/32 fe80::2043:2aff:fee3:d3c/64 
+veth45a80405@if2 UP             10.244.0.1/32 fe80::f:41ff:fe01:2953/64 
+veth958c0296@if2 UP             10.244.0.1/32 fe80::9c68:38ff:fe6c:31b9/64 
+veth3867ad14@if2 UP             10.244.0.1/32 fe80::3841:1dff:fef9:2900/64 
+veth1f4de66f@if2 UP             10.244.0.1/32 fe80::f045:96ff:fe65:fd1a/64 
+veth8edcdb5d@if2 UP             10.244.0.1/32 fe80::b8f6:79ff:febc:b9a0/64 
+veth2ef0ceaf@if2 UP             10.244.0.1/32 fe80::246d:bcff:fe3b:d36e/64 
+
+## route to CM server address
+CM_HOST=172.18.0.2
+local 172.18.0.2 dev lo src 172.18.0.2 uid 0 
+    cache <local> 
+
+## tc qdisc eth0
+qdisc netem 8091: root refcnt 5 limit 1000 delay 500ms
+
+## ss -tnp (kube-controller / kube-apiserver / :6443)
+ESTAB 0      0                127.0.0.1:57116           127.0.0.1:2379  users:(("kube-apiserver",pid=617,fd=7))     
+ESTAB 0      0                127.0.0.1:57124           127.0.0.1:2379  users:(("kube-apiserver",pid=617,fd=8))     
+ESTAB 0      0                127.0.0.1:57512           127.0.0.1:2379  users:(("kube-apiserver",pid=617,fd=48))    
+ESTAB 0      0                127.0.0.1:57406           127.0.0.1:2379  users:(("kube-apiserver",pid=617,fd=36))    
+ESTAB 0      0                127.0.0.1:57426           127.0.0.1:2379  users:(("kube-apiserver",pid=617,fd=39))    
+ESTAB 0      0                127.0.0.1:57370           127.0.0.1:2379  users:(("kube-apiserver",pid=617,fd=30))    
+ESTAB 0      0                127.0.0.1:57596           127.0.0.1:2379  users:(("kube-apiserver",pid=617,fd=57))    
+ESTAB 0      0                127.0.0.1:57240           127.0.0.1:2379  users:(("kube-apiserver",pid=617,fd=18))    
+ESTAB 0      0                127.0.0.1:57572           127.0.0.1:2379  users:(("kube-apiserver",pid=617,fd=54))    
+ESTAB 0      0               172.18.0.2:49768          172.18.0.2:6443  users:(("kubelet",pid=729,fd=11))           
+ESTAB 0      0                127.0.0.1:57222           127.0.0.1:2379  users:(("kube-apiserver",pid=617,fd=16))    
+ESTAB 0      0                127.0.0.1:57336           127.0.0.1:2379  users:(("kube-apiserver",pid=617,fd=28))    
+ESTAB 0      0                127.0.0.1:57384           127.0.0.1:2379  users:(("kube-apiserver",pid=617,fd=32))    
+ESTAB 0      0                127.0.0.1:57258           127.0.0.1:2379  users:(("kube-apiserver",pid=617,fd=20))    
+ESTAB 0      0               172.18.0.2:40622          172.18.0.2:6443  users:(("kube-scheduler",pid=551,fd=8))     
+ESTAB 0      0                127.0.0.1:57464           127.0.0.1:2379  users:(("kube-apiserver",pid=617,fd=43))    
+ESTAB 0      0                127.0.0.1:57378           127.0.0.1:2379  users:(("kube-apiserver",pid=617,fd=31))    
+ESTAB 0      0                127.0.0.1:57644           127.0.0.1:2379  users:(("kube-apiserver",pid=617,fd=63))    
+ESTAB 0      0                127.0.0.1:57294           127.0.0.1:2379  users:(("kube-apiserver",pid=617,fd=23))    
+ESTAB 0      0                127.0.0.1:57642           127.0.0.1:2379  users:(("kube-apiserver",pid=617,fd=62))    
+ESTAB 0      0                127.0.0.1:57290           127.0.0.1:2379  users:(("kube-apiserver",pid=617,fd=22))    
+ESTAB 0      0                127.0.0.1:57236           127.0.0.1:2379  users:(("kube-apiserver",pid=617,fd=17))    
+ESTAB 0      0                127.0.0.1:57450           127.0.0.1:2379  users:(("kube-apiserver",pid=617,fd=42))    
+ESTAB 0      0               172.18.0.2:40610          172.18.0.2:6443  users:(("kube-scheduler",pid=551,fd=7))     
+ESTAB 0      0                127.0.0.1:57632           127.0.0.1:2379  users:(("kube-apiserver",pid=617,fd=60))    
+ESTAB 0      0                127.0.0.1:57636           127.0.0.1:2379  users:(("kube-apiserver",pid=617,fd=61))    
+ESTAB 0      0                127.0.0.1:57544           127.0.0.1:2379  users:(("kube-apiserver",pid=617,fd=52))    
+ESTAB 0      0               172.18.0.2:56894          172.18.0.2:6443  users:(("kindnetd",pid=1520,fd=15))         
+ESTAB 0      0                127.0.0.1:57362           127.0.0.1:2379  users:(("kube-apiserver",pid=617,fd=19))    
+ESTAB 0      0                127.0.0.1:57140           127.0.0.1:2379  users:(("kube-apiserver",pid=617,fd=10))    
+ESTAB 0      0                127.0.0.1:57652           127.0.0.1:2379  users:(("kube-apiserver",pid=617,fd=64))    
+ESTAB 0      0                127.0.0.1:57396           127.0.0.1:2379  users:(("kube-apiserver",pid=617,fd=35))    
+ESTAB 0      0                127.0.0.1:57586           127.0.0.1:2379  users:(("kube-apiserver",pid=617,fd=55))    
+ESTAB 0      0                127.0.0.1:57498           127.0.0.1:2379  users:(("kube-apiserver",pid=617,fd=47))    
+ESTAB 0      0                127.0.0.1:57538           127.0.0.1:2379  users:(("kube-apiserver",pid=617,fd=51))    
+ESTAB 0      0                127.0.0.1:57534           127.0.0.1:2379  users:(("kube-apiserver",pid=617,fd=50))    
+ESTAB 0      0                127.0.0.1:57408           127.0.0.1:2379  users:(("kube-apiserver",pid=617,fd=37))    
+ESTAB 0      0                127.0.0.1:57448           127.0.0.1:2379  users:(("kube-apiserver",pid=617,fd=41))    
+ESTAB 0      0                127.0.0.1:57594           127.0.0.1:2379  users:(("kube-apiserver",pid=617,fd=56))    
+ESTAB 0      0                127.0.0.1:57310           127.0.0.1:2379  users:(("kube-apiserver",pid=617,fd=24))    
+ESTAB 0      0                127.0.0.1:57414           127.0.0.1:2379  users:(("kube-apiserver",pid=617,fd=38))    
+ESTAB 0      0                127.0.0.1:57352           127.0.0.1:2379  users:(("kube-apiserver",pid=617,fd=29))    
+ESTAB 0      0                127.0.0.1:57274           127.0.0.1:2379  users:(("kube-apiserver",pid=617,fd=21))    
+ESTAB 0      0                127.0.0.1:57482           127.0.0.1:2379  users:(("kube-apiserver",pid=617,fd=46))    
+ESTAB 0      0                127.0.0.1:57474           127.0.0.1:2379  users:(("kube-apiserver",pid=617,fd=45))    
+ESTAB 0      0                127.0.0.1:57622           127.0.0.1:2379  users:(("kube-apiserver",pid=617,fd=59))    
+ESTAB 0      0                127.0.0.1:57134           127.0.0.1:2379  users:(("kube-apiserver",pid=617,fd=9))     
+ESTAB 0      0                127.0.0.1:57654           127.0.0.1:2379  users:(("kube-apiserver",pid=617,fd=65))    
+ESTAB 0      0                127.0.0.1:57436           127.0.0.1:2379  users:(("kube-apiserver",pid=617,fd=40))    
+ESTAB 0      0                127.0.0.1:57472           127.0.0.1:2379  users:(("kube-apiserver",pid=617,fd=44))    
+ESTAB 0      0                127.0.0.1:57212           127.0.0.1:2379  users:(("kube-apiserver",pid=617,fd=15))    
+ESTAB 0      0               172.18.0.2:54810          172.18.0.2:6443  users:(("kube-controller",pid=217332,fd=14))
+ESTAB 0      0                127.0.0.1:57188           127.0.0.1:2379  users:(("kube-apiserver",pid=617,fd=12))    
+ESTAB 0      0                127.0.0.1:57316           127.0.0.1:2379  users:(("kube-apiserver",pid=617,fd=25))    
+ESTAB 0      0                127.0.0.1:57318           127.0.0.1:2379  users:(("kube-apiserver",pid=617,fd=26))    
+ESTAB 0      0                127.0.0.1:57522           127.0.0.1:2379  users:(("kube-apiserver",pid=617,fd=49))    
+ESTAB 0      0                127.0.0.1:57174           127.0.0.1:2379  users:(("kube-apiserver",pid=617,fd=13))    
+ESTAB 0      0                127.0.0.1:57386           127.0.0.1:2379  users:(("kube-apiserver",pid=617,fd=33))    
+ESTAB 0      0                127.0.0.1:57610           127.0.0.1:2379  users:(("kube-apiserver",pid=617,fd=58))    
+ESTAB 0      0                127.0.0.1:57558           127.0.0.1:2379  users:(("kube-apiserver",pid=617,fd=53))    
+ESTAB 0      0                127.0.0.1:57178           127.0.0.1:2379  users:(("kube-apiserver",pid=617,fd=11))    
+ESTAB 0      0               172.18.0.2:47900          172.18.0.2:6443  users:(("kube-controller",pid=217332,fd=7)) 
+ESTAB 0      0                127.0.0.1:57204           127.0.0.1:2379  users:(("kube-apiserver",pid=617,fd=14))    
+ESTAB 0      0                127.0.0.1:57388           127.0.0.1:2379  users:(("kube-apiserver",pid=617,fd=34))    
+ESTAB 0      0               172.18.0.2:56708          172.18.0.2:6443  users:(("kube-proxy",pid=1294,fd=9))        
+ESTAB 0      0                127.0.0.1:57324           127.0.0.1:2379  users:(("kube-apiserver",pid=617,fd=27))    
+ESTAB 0      0      [::ffff:172.18.0.2]:6443  [::ffff:10.244.0.4]:37954 users:(("kube-apiserver",pid=617,fd=74))    
+ESTAB 0      0      [::ffff:172.18.0.2]:6443  [::ffff:172.18.0.2]:56708 users:(("kube-apiserver",pid=617,fd=73))    
+ESTAB 0      0      [::ffff:172.18.0.2]:6443  [::ffff:10.244.0.2]:41642 users:(("kube-apiserver",pid=617,fd=82))    
+ESTAB 0      0      [::ffff:172.18.0.2]:6443  [::ffff:172.18.0.2]:54810 users:(("kube-apiserver",pid=617,fd=78))    
+ESTAB 0      0      [::ffff:172.18.0.2]:6443  [::ffff:172.18.0.2]:56894 users:(("kube-apiserver",pid=617,fd=76))    
+ESTAB 0      0      [::ffff:172.18.0.2]:6443  [::ffff:172.18.0.2]:47900 users:(("kube-apiserver",pid=617,fd=70))    
+ESTAB 0      0      [::ffff:172.18.0.2]:6443  [::ffff:172.18.0.2]:40610 users:(("kube-apiserver",pid=617,fd=80))    
+ESTAB 0      0                    [::1]:49962               [::1]:6443  users:(("kube-apiserver",pid=617,fd=111))   
+ESTAB 0      0      [::ffff:172.18.0.2]:6443  [::ffff:10.244.0.3]:33824 users:(("kube-apiserver",pid=617,fd=75))    
+ESTAB 0      0      [::ffff:172.18.0.2]:6443  [::ffff:172.18.0.2]:49768 users:(("kube-apiserver",pid=617,fd=72))    
+ESTAB 0      0                    [::1]:6443                [::1]:49962 users:(("kube-apiserver",pid=617,fd=140))   
+ESTAB 0      0      [::ffff:172.18.0.2]:6443  [::ffff:172.18.0.2]:40622 users:(("kube-apiserver",pid=617,fd=69))    
+
+## timing check (host kubectl vs in-node curl to CM server)
+HOST_KUBECTL_ms mean=1605.0 samples=[1601.3, 1610.8, 1605.5, 1611.4, 1596.0]
+INNODE_CURL_API_ms mean=23.2 samples=[23.0, 20.0, 27.0, 26.0, 20.0]

@@ -51,6 +51,9 @@ make matrix         # 20-run E0–E3 calibration (needs Kind)
 | [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) | Components + diagram |
 | [`docs/SCHEMA.md`](docs/SCHEMA.md) | Normalized JSONL trace schema |
 | [`docs/THREAT-MODEL.md`](docs/THREAT-MODEL.md) | Adversary / trust assumptions |
+| [`docs/evidence/fault-reach-2026-07-27/`](docs/evidence/fault-reach-2026-07-27/) | Primary evidence: eth0 netem path reach |
+| [`CHANGELOG.md`](CHANGELOG.md) | SemVer history |
+| [`REPRODUCTION.md`](REPRODUCTION.md) | Independent cold-reproduction record |
 | [`docs/SCOPE-ISOLATION.md`](docs/SCOPE-ISOLATION.md) | Kind lab scope / isolation |
 | [`docs/EXTENDING.md`](docs/EXTENDING.md) | Add ownership path or oracle |
 | [`EVIDENCE.md`](EVIDENCE.md) | Smoke evidence summary |
@@ -75,8 +78,10 @@ Cite a frozen git tag (and later the SoftwareX article / Zenodo DOI when availab
 ```text
 Seke Kazuru. KOSV: Kubernetes Ownership Safety Verifier.
 https://github.com/kazuru-chidumbwe/k8s-ownership-safety-verifier
-Tag: blog-kosv01-2026-07
+Tag: v0.1.0
 ```
+
+(Blog pin `blog-kosv01-2026-07` remains valid for the KOSV-01 post; prefer `v0.1.0` for SoftwarX.)
 
 ## Claim discipline
 
