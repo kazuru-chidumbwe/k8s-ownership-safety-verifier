@@ -8,12 +8,12 @@ KOSV is aimed at researchers studying controller / ownership correctness under c
 
 | Oracle | Predicate | Status |
 | --- | --- | --- |
-| O1 Snapshot SCOI | At any recorded event, `count(controller=true) ≤ 1` | Implemented |
+| O1 Snapshot SCOI (Single Controller Ownership Invariant) | At any recorded event, `count(controller=true) ≤ 1` | Implemented |
 | O2 Unintended transfer | ControllerRef A→B on same UID without expected orphan/DELETE | Implemented |
 | O3 Observation mismatch | Controller belief ≠ API ControllerRef | Defined, not implemented |
 | O4 Behavioral thrash | Ownership fight / thrash while O1 holds | Defined, not implemented |
 
-
+Author: [Seke Kazuru](https://orcid.org/0009-0002-4099-1059) · `kazuruuni@gmail.com`  
 License: MIT
 
 ## One-command demo (offline, ≪10 minutes)
@@ -63,7 +63,7 @@ make matrix         # 20-run E0–E3 calibration (needs Kind)
 | `verifier/check.py` | O1/O2 predicates over JSONL traces |
 | `fixtures/` | Synthetic O1 FAIL, O2 FAIL, intended orphan PASS |
 | `collector/` | kubectl-oriented collection helpers |
-| `injector/` | Delay tooling (`tc netem` used in Kind; optional host delay_proxy for self-tests) |
+| `injector/` | Delay tooling (`tc netem` on Kind `eth0` = collector↔API path; optional host delay_proxy for self-tests) |
 | `experiments/` | Fixture smoke, Kind smoke, matrix, scale runners |
 | `results/` | Committed smoke reports |
 | `matrix/runs/` | Calibration archives |

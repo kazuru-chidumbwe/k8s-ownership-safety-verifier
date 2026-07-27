@@ -39,16 +39,18 @@ KOSV is a **research instrument** for measuring Kubernetes ownership safety. It 
 | Component | Responsibility |
 | --- | --- |
 | **Workload generator** | Creates/scales Deployment→ReplicaSet→Pod workloads with stable `experiment_id`s |
-| **Fault injector** | Applies reproducible observation-path delay (`tc netem` on Kind node `eth0`) and/or restarts `kube-controller-manager` |
+| **Fault injector** | Applies reproducible **collector-to-API** delay (`tc netem` on Kind node `eth0`) and/or restarts `kube-controller-manager` |
 | **Trace collector** | Observes API objects and `ownerReferences` |
 | **Event normalizer** | Emits schema-stable JSONL events |
 | **Verifier** | Evaluates O1/O2; reserved hooks for O3/O4 when belief-state traces exist |
 
 ## Fault injection notes
 
-An earlier prototype considered a transparent TCP **proxy** between controller-manager and the API server. In Kind, `kube-controller-manager` runs as a **static control-plane pod**, so transparent interception requires control-plane surgery. v0 therefore uses **Linux `tc netem`** on the Kind node for in-cluster delay, preserving a stock Kind topology.
+An earlier prototype considered a transparent TCP **proxy** between controller-manager and the API server. In Kind, `kube-controller-manager` runs as a **static control-plane pod**, so transparent interception requires control-plane surgery. v0 instead applies **Linux `tc netem` on `eth0`**, preserving a stock Kind topology.
 
-Optional host-side `injector/delay_proxy.py` remains for calibration self-tests; it is **not** the Kind matrix observation-path fault.
+**Scope lock:** on single-node Kind, controller-manager→API is local (`lo` delivery to the node’s own IP). `eth0` netem therefore delays the **external collector (`kubectl`) ↔ API** path, not API↔controller informer traffic. That matches KOSV’s poll-based architecture; see [THREAT-MODEL.md](THREAT-MODEL.md) and [SCOPE-ISOLATION.md](SCOPE-ISOLATION.md). True controller↔API delay is deferred (`lo` netem / interception).
+
+Optional host-side `injector/delay_proxy.py` remains for calibration self-tests; it is **not** the Kind matrix collector-delay fault.
 
 ## Determinism and replay
 
