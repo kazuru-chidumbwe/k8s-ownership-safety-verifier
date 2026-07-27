@@ -1,0 +1,21 @@
+# Excerpt: kube-controller ↔ API sockets under live eth0 netem 500ms
+# Source: fault-reach.txt · 2026-07-27T11:39:23Z · host kosv-lab-01 · Kind kosv
+# Full dump: fault-reach.txt
+
+controller-manager.conf:
+    server: https://172.18.0.2:6443
+
+ip route get 172.18.0.2:
+local 172.18.0.2 dev lo src 172.18.0.2 uid 0
+    cache <local>
+
+tc qdisc show dev eth0:
+qdisc netem 8091: root refcnt 5 limit 1000 delay 500ms
+
+ss -tnp (kube-controller lines):
+ESTAB 0      0               172.18.0.2:54810          172.18.0.2:6443  users:(("kube-controller",pid=217332,fd=14))
+ESTAB 0      0               172.18.0.2:47900          172.18.0.2:6443  users:(("kube-controller",pid=217332,fd=7))
+
+timing under same qdisc:
+HOST_KUBECTL_ms mean=1605.0 samples=[1601.3, 1610.8, 1605.5, 1611.4, 1596.0]
+INNODE_CURL_API_ms mean=23.2 samples=[23.0, 20.0, 27.0, 26.0, 20.0]

@@ -1,0 +1,13 @@
+{
+  "captured_utc": "2026-07-27T11:39:23Z",
+  "host": "kosv-lab-01",
+  "cluster": "kosv",
+  "fault": "tc qdisc replace dev eth0 root netem delay 500ms",
+  "controller_manager_server": "https://172.18.0.2:6443",
+  "route_line": "local 172.18.0.2 dev lo src 172.18.0.2 uid 0",
+  "path_class": "own_eth0_ip_local_delivery_via_lo",
+  "eth0_netem_delays_controller_api": false,
+  "eth0_netem_delays_host_collector": true,
+  "host_kubectl_mean_ms": 1605.0,
+  "innode_curl_mean_ms": 23.2
+}
