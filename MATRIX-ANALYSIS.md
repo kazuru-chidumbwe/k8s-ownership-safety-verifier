@@ -4,7 +4,7 @@
 
 **No findings claims.** This is instrument validity under fault load only.
 
-## Design responses to sponsor scrutiny
+## Design notes
 
 | Point | Response |
 | --- | --- |
@@ -39,6 +39,6 @@ Under E1/E2, poll yields **fewer** ownership events (cluster slowed by `tc`). Th
 
 Across all 20 matrix runs: **0** O1/O2 violations; **0** continuity INCONCLUSIVE marks. Fixture orphan path still records `orphan_observed` / `intended_orphan_then_adopt` suppressions when exercised offline.
 
-## Gate
+## Scope note
 
-Matrix pass criteria met for methodology-blog *eligibility* pending sponsor review of this archive. **Do not publish** until sponsor greenlights.
+This matrix is a calibration artifact for the KOSV instrument. It is not a vulnerability finding report.
