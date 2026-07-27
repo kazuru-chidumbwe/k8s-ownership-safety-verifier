@@ -2,7 +2,7 @@
 """20-run matrix: E0/E1/E2/E3 × 5.
 
 E0: 0ms baseline
-E1: 500ms observation delay (delay_proxy calibrated + tc netem in Kind node)
+E1: 500ms collector-to-API delay (delay_proxy self-test + tc netem on Kind eth0)
 E2: 2000ms same
 E3: controller-manager restart during scale (no delay)
 
@@ -99,7 +99,9 @@ def wait_deployment(namespace: str, name: str, timeout: float = 180.0) -> bool:
 
 
 def apply_tc_delay(delay_ms: int) -> None:
-    # Kind control-plane observation-path approximation (in-cluster API path).
+    # Collector-to-API delay on single-node Kind: eth0 netem shapes host/kubectl
+    # traffic. Controller-manager→API is local (own eth0 IP via lo) and is NOT
+    # delayed by this qdisc. See docs/THREAT-MODEL.md.
     if delay_ms <= 0:
         clear_tc_delay()
         return

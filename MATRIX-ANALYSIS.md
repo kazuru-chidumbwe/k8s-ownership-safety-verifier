@@ -12,7 +12,7 @@
 | O1 incompleteness | Explicit caveat on every report + below: PASS ≠ proof of absence. |
 | Event order | Events sorted by `time` (stable); O1 runs before any ownership-state update; collector dedup is by `(resource,uid,RV)` **after** emit, not inside checker. |
 | O2 handoff | Timeline uses prior `last_ctrl`; orphan then adopt is suppression, not FAIL. No Deployment whitelist (not required). |
-| Delay measurement | `delay_proxy` calibrated per run (`proxy-latency.json`); Kind in-cluster path uses matching `tc netem` (proxy cannot sit between static-pod controller-manager and apiserver without control-plane surgery). |
+| Delay measurement | Host `delay_proxy` self-test per run (`proxy-latency.json`); Kind E1/E2 use `tc netem` on `eth0`, which delays **collector↔API** (not API↔controller — local/`lo` delivery). See `docs/THREAT-MODEL.md`. |
 | Suppressions | Logged in each `report.json` (`suppressions[]`). |
 
 ## Results table
