@@ -8,6 +8,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 Citation / essay pins (`blog-*`) remain valid reproducibility anchors.
 Prefer **SemVer** (`vX.Y.Z`) for SoftwarX / package citations; see [`docs/TAGS.md`](docs/TAGS.md).
 
+## [0.1.1] — 2026-07-27
+
+### Fixed
+
+- Scrubbed lab hostname from fault-reach evidence archives (`kosv-lab-01` publication alias; no identifying host strings).
+
 ## [0.1.0] — 2026-07-27
 
 ### Added
