@@ -4,6 +4,50 @@ Research instrument for measuring Kubernetes ownership safety (`ownerReferences`
 
 KOSV is aimed at researchers studying controller / ownership correctness under controlled conditions. It is not an operator dashboard and does not claim that Kubernetes is safe or unsafe.
 
+Author: [Seke Kazuru](https://orcid.org/0009-0002-4099-1059) · `kazuruuni@gmail.com`  
+License: MIT · SoftwarX gate file: [`Licence.txt`](Licence.txt) (same text as [`LICENSE`](LICENSE))
+
+## Quick Start (3 steps)
+
+### 1 — Offline smoke (no cluster; ≪10 minutes)
+
+```bash
+git clone https://github.com/kazuru-chidumbwe/k8s-ownership-safety-verifier.git
+cd k8s-ownership-safety-verifier
+git checkout v0.1.0   # cite this SemVer tag (same tree as blog-kosv01-2026-07)
+
+make smoke-fixtures
+```
+
+Runs synthetic O1 FAIL, O2 FAIL, and intended-orphan PASS fixtures through the verifier. Dependencies: Python 3 standard library only (see [`requirements.txt`](requirements.txt)).
+
+### 2 — Optional Kind laboratory smoke
+
+```bash
+make smoke          # fixtures + Kind clean Deployment create/scale
+# or: make smoke-kind
+```
+
+Requires Docker, `kind`, and `kubectl`. Kind is a **laboratory** cluster only — see [`docs/SCOPE-ISOLATION.md`](docs/SCOPE-ISOLATION.md).
+
+### 3 — Cite the frozen tag
+
+```text
+Seke Kazuru. KOSV: Kubernetes Ownership Safety Verifier.
+https://github.com/kazuru-chidumbwe/k8s-ownership-safety-verifier
+Tag: v0.1.0
+```
+
+Essay pin `blog-kosv01-2026-07` aliases the same tree — see [`docs/TAGS.md`](docs/TAGS.md). Add the SoftwareX / Zenodo citation when published.
+
+**Calibration matrix (lab, optional):** `make matrix` — 20-run E0–E3 under Kind (needs Docker/`kind`/`kubectl`).
+
+## Architecture
+
+![KOSV architecture](docs/figures/fig1-kosv-architecture.png)
+
+*Figure: Workload generation and fault injection drive a Kind laboratory cluster; ownership observations are collected, normalized to JSONL, and evaluated by the verifier (O1/O2). Synthetic fixtures exercise the verifier without a cluster. Kind `eth0` `tc netem` delays the host collector (`kubectl`)↔API path; controller-manager↔API on single-node Kind is local (`lo`) and is not delayed by `eth0` netem. Details: [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md).*
+
 ## Oracles (v0)
 
 | Oracle | Predicate | Status |
@@ -13,36 +57,9 @@ KOSV is aimed at researchers studying controller / ownership correctness under c
 | O3 Observation mismatch | Controller belief ≠ API ControllerRef | Defined, not implemented |
 | O4 Behavioral thrash | Ownership fight / thrash while O1 holds | Defined, not implemented |
 
-Author: [Seke Kazuru](https://orcid.org/0009-0002-4099-1059) · `kazuruuni@gmail.com`  
-License: MIT
+## Extending
 
-## One-command demo (offline, ≪10 minutes)
-
-```bash
-git clone https://github.com/kazuru-chidumbwe/k8s-ownership-safety-verifier.git
-cd k8s-ownership-safety-verifier
-# Prefer a frozen SemVer tag when citing (example):
-# git checkout v0.1.0   # same tree as blog-kosv01-2026-07
-
-make smoke-fixtures
-```
-
-This runs synthetic O1 FAIL, O2 FAIL, and intended-orphan PASS fixtures through the verifier. No cluster required. Dependencies: Python 3 standard library only (see [`requirements.txt`](requirements.txt)).
-
-### Optional Kind lab smoke
-
-```bash
-make smoke          # fixtures + Kind clean Deployment create/scale
-# or: make smoke-kind
-```
-
-Requires Docker, `kind`, and `kubectl`.
-
-### Calibration matrix (lab)
-
-```bash
-make matrix         # 20-run E0–E3 calibration (needs Kind)
-```
+Concrete reuse paths (new ownership path, new oracle, O3 once belief traces exist, richer faults, multi-CP labs) are documented in [`docs/EXTENDING.md`](docs/EXTENDING.md).
 
 ## Documentation
 
@@ -71,17 +88,6 @@ make matrix         # 20-run E0–E3 calibration (needs Kind)
 | `experiments/` | Fixture smoke, Kind smoke, matrix, scale runners |
 | `results/` | Committed smoke reports |
 | `matrix/runs/` | Calibration archives |
-
-## How to cite
-
-Cite a frozen SemVer tag (and later the SoftwareX article / Zenodo DOI when available), not `main`.
-Essay pin `blog-kosv01-2026-07` aliases the same tree — see [`docs/TAGS.md`](docs/TAGS.md).
-
-```text
-Seke Kazuru. KOSV: Kubernetes Ownership Safety Verifier.
-https://github.com/kazuru-chidumbwe/k8s-ownership-safety-verifier
-Tag: v0.1.0
-```
 
 ## Claim discipline
 
