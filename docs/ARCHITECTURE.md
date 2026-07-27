@@ -63,7 +63,7 @@ Optional host-side `injector/delay_proxy.py` remains for calibration self-tests;
 
 | Oracle | Status | Needs |
 | --- | --- | --- |
-| O1 Snapshot SCOI | Implemented | API/trace events |
+| O1 Snapshot SCOI (Single Controller Ownership Invariant) | Implemented | API/trace events |
 | O2 Unintended transfer | Implemented | API/trace events + intended-transfer rules |
 | O3 Observation mismatch | **Defined, not implemented** | Controller belief/informer view at reconcile time |
 | O4 Behavioral thrash | **Defined, not implemented** | Thresholded adopt/orphan / recreate patterns + belief or dense traces |
