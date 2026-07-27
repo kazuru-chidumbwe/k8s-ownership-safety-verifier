@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """KOSV O1/O2 oracle checker over normalized ownership traces.
 
-O1 (Snapshot SCOI): at any persisted event, count(controller=true) <= 1.
+O1 (Snapshot SCOI — Single Controller Ownership Invariant): at any persisted event, count(controller=true) <= 1.
      Evaluated per event; object identity includes resource type + uid.
      Negative results do NOT prove absence — poll/watch may miss short-lived revisions.
 O2 (Unintended transfer): same object UID changes ControllerRef A->B without
