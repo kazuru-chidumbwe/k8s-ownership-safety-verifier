@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Compute same-object and inter-sweep poll gaps from matrix trace.jsonl archives.
 
-Definitions (must match SoftwarX §3.3(B)):
+Definitions (must match SoftwareX §3.3(B)):
 
   Same-object gap: elapsed time between two consecutive normalized events for
   the same (resource, uid) pair, irrespective of intervening sweeps.
@@ -10,7 +10,7 @@ Definitions (must match SoftwarX §3.3(B)):
   first event of the next sweep. A sweep is a contiguous block of events with
   successive inter-event gaps strictly below SWEEP_GAP_MS.
 
-Default SWEEP_GAP_MS=200 matches the SoftwarX Table (B) computation.
+Default SWEEP_GAP_MS=200 matches the SoftwareX Table (B) computation.
 """
 from __future__ import annotations
 

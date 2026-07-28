@@ -4,7 +4,7 @@ KOSV is a **research instrument** for measuring Kubernetes ownership safety. It 
 
 ## Component diagram
 
-Publication-quality figure (also used in the SoftwarX manuscript and README):
+Publication-quality figure (also used in the SoftwareX manuscript and README):
 
 ![KOSV architecture](figures/fig1-kosv-architecture.png)
 
