@@ -22,7 +22,7 @@
 | E0 | 0ms baseline | 5 | PASS | 14–16 | ~1.8 | yes (target 0) |
 | E1 | 500ms delay | 5 | PASS | 7–8 | ~503.3 | **yes** |
 | E2 | 2000ms delay | 5 | PASS | 7–7 | ~2003.4 | **yes** |
-| E3 | controller-manager restart | 5 | PASS | 12–12 | ~1.8 | yes |
+| E3 | clean CM restart (steady state) | 5 | PASS | 12–12 | ~1.8 | yes |
 
 Matrix id: `matrix/runs/20260726T210257Z/` — each run has `trace.jsonl`, `report.json`, `meta.json`, `proxy-latency.json`.
 
