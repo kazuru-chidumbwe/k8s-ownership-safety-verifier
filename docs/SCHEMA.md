@@ -10,7 +10,7 @@ Normalized ownership events are newline-delimited JSON (**JSONL**). One object p
 | `resource` | string | yes | Singular resource type: `deployment`, `replicaset`, `pod`, … |
 | `namespace` | string | yes | Kubernetes namespace |
 | `name` | string | yes | Object name |
-| `uid` | string | yes | Kubernetes object UID (identity for O1/O2) |
+| `uid` | string | yes | Kubernetes object UID; O1/O2 object identity is `(resource, uid)` |
 | `resourceVersion` | string | yes | API `resourceVersion` at observation |
 | `event` | string | yes | `ADDED` · `MODIFIED` · `DELETED` · `UPDATE` (poll) |
 | `owners` | array of owner objects | yes | Normalized `ownerReferences` (may be empty) |
