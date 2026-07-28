@@ -6,7 +6,7 @@ Hashes below are from `git rev-parse --short <tag>^{commit}` after the 2026-07-2
 
 | Tag | Commit | Purpose |
 | --- | --- | --- |
-| `v0.1.2` | _(this release — run `git rev-parse --short HEAD` on the tag)_ | **SoftwareX / blog cite pin** (gap script + docs truth + figures) |
+| [`v0.1.2`](https://github.com/kazuru-chidumbwe/k8s-ownership-safety-verifier/releases/tag/v0.1.2) | `f777db4` | **SoftwareX / blog cite pin** (gap script + docs truth + figures) |
 | [`v0.1.1`](https://github.com/kazuru-chidumbwe/k8s-ownership-safety-verifier/releases/tag/v0.1.1) | `e6295b5` | Hostname scrub in fault-reach evidence |
 | [`v0.1.0`](https://github.com/kazuru-chidumbwe/k8s-ownership-safety-verifier/releases/tag/v0.1.0) | `d054f47` | First SemVer release (CHANGELOG + tag policy) |
 | [`blog-kosv01-2026-07`](https://github.com/kazuru-chidumbwe/k8s-ownership-safety-verifier/tree/blog-kosv01-2026-07) | `e3532ce` | KOSV-01 methodology essay freeze |
@@ -17,7 +17,6 @@ Hashes below are from `git rev-parse --short <tag>^{commit}` after the 2026-07-2
 ```bash
 git checkout v0.1.2
 make smoke-fixtures
-git rev-parse --short HEAD
 ```
 
 ## Tag policy
@@ -28,4 +27,4 @@ git rev-parse --short HEAD
 - New SemVer tags when the release boundary changes — not on every doc commit.
 - Do not force-move a published SemVer tag; cut the next patch/minor instead.
 - After the 2026-07-28 recut, older clones that still show inverted `v0.1.0`/`v0.1.1` should `git fetch --tags --force` (or re-clone).
-- Sanity-check: `git rev-parse --short <tag>^{commit}` and `git cat-file -t <hash>`. Phantom pre-rewrite `1d51980` must not resolve.
+- Sanity-check any cited SemVer: `git rev-parse --short <tag>^{commit}` must match this table (and `git cat-file -t <hash>` must succeed). Phantom pre-rewrite `1d51980` must not resolve.
