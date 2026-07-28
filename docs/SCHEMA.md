@@ -48,7 +48,7 @@ Per-run archive directories typically include:
 | `report.json` | Verifier output (`status`, `violations`, `suppressions`, `caveats`) |
 | `meta.json` | Experiment parameters (delay, restart, Kind version, poll interval, …) |
 
-Matrix calibration also records delay calibration summaries (filenames may historically say `proxy-latency*.json`). Kind matrix E1/E2 apply **`tc netem` on `eth0`** as a **collector↔API** fault — not API↔controller delay (see [THREAT-MODEL.md](THREAT-MODEL.md)).
+Matrix runs also record delay-tool self-test summaries (filenames may historically say `proxy-latency*.json`) — that is **delay_proxy calibration**. Kind matrix E1/E2 apply **`tc netem` on `eth0`** as a **collector↔API** fault — not API↔controller delay (see [THREAT-MODEL.md](THREAT-MODEL.md)). O1/O2 outcomes on those runs are **instrument validation**.
 
 ## Report status
 

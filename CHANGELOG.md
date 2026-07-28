@@ -8,6 +8,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 Citation / essay pins (`blog-*`) remain valid reproducibility anchors.
 Prefer **SemVer** (`vX.Y.Z`) for SoftwareX / package citations; see [`docs/TAGS.md`](docs/TAGS.md).
 
+## [0.1.5] — 2026-07-28
+
+### Changed
+
+- Locked **calibration** vs **validation** wording: `delay_proxy` self-tests stay calibration; smoke + matrix O1/O2 outcomes are instrument validation ([`docs/TERMINOLOGY.md`](docs/TERMINOLOGY.md)).
+- README, MATRIX-ANALYSIS, SCHEMA, EXTENDING updated to match.
+
 ## [0.1.4] — 2026-07-28
 
 ### Changed

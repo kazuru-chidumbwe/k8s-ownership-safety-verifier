@@ -41,4 +41,4 @@ Across all 20 matrix runs: **0** O1/O2 violations; **0** continuity INCONCLUSIVE
 
 ## Scope note
 
-This matrix is a calibration artifact for the KOSV instrument. It is not a vulnerability finding report.
+This matrix is an **instrument-validation** artifact for the KOSV checker under stated lab faults. Host `delay_proxy` self-tests in each run remain **tool calibration** (±10% of configured delay). The matrix is not a vulnerability finding report and not a Kubernetes ownership-safety result.
