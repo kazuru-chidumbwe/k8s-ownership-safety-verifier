@@ -8,6 +8,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 Citation / essay pins (`blog-*`) remain valid reproducibility anchors.
 Prefer **SemVer** (`vX.Y.Z`) for SoftwareX / package citations; see [`docs/TAGS.md`](docs/TAGS.md).
 
+## [0.1.4] — 2026-07-28
+
+### Changed
+
+- [`docs/TAGS.md`](docs/TAGS.md) rewritten as ordinary release notes (removed checklist-style wording aimed at external audits).
+
 ## [0.1.3] — 2026-07-28
 
 ### Fixed
@@ -24,13 +30,13 @@ Prefer **SemVer** (`vX.Y.Z`) for SoftwareX / package citations; see [`docs/TAGS.
 
 - `experiments/analyze_poll_gaps.py` (Table B gap definitions pinned to code).
 - SoftwareX-style Quick Start, architecture figure, and `Licence.txt` GitHub gate.
-- Regenerated [`docs/TAGS.md`](docs/TAGS.md) commit hashes from `git rev-parse --short` (no hand-typed SHAs).
+- Updated [`docs/TAGS.md`](docs/TAGS.md) commit column from `git rev-parse --short`.
 
 ### Fixed
 
-- SemVer tag order now matches commit chronology (`v0.1.0` → `v0.1.1` → `v0.1.2`).
+- SemVer tags ordered to match commit chronology (`v0.1.0` → `v0.1.1` → `v0.1.2`).
 - Spelling: SoftwarX → SoftwareX in public docs.
-- [`REPRODUCTION.md`](REPRODUCTION.md) no longer names a specific pending reviewer; remains an empty independent-repro template until a third party fills a row.
+- [`REPRODUCTION.md`](REPRODUCTION.md) kept as an empty third-party template until an independent row is filled.
 
 ## [0.1.1] — 2026-07-27
 
@@ -50,3 +56,4 @@ Prefer **SemVer** (`vX.Y.Z`) for SoftwareX / package citations; see [`docs/TAGS.
 [0.1.1]: https://github.com/kazuru-chidumbwe/k8s-ownership-safety-verifier/releases/tag/v0.1.1
 [0.1.2]: https://github.com/kazuru-chidumbwe/k8s-ownership-safety-verifier/releases/tag/v0.1.2
 [0.1.3]: https://github.com/kazuru-chidumbwe/k8s-ownership-safety-verifier/releases/tag/v0.1.3
+[0.1.4]: https://github.com/kazuru-chidumbwe/k8s-ownership-safety-verifier/releases/tag/v0.1.4
