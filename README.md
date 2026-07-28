@@ -53,7 +53,7 @@ Essay pin `blog-kosv01-2026-07` aliases the same tree — see [`docs/TAGS.md`](d
 | Oracle | Predicate | Status |
 | --- | --- | --- |
 | O1 Snapshot SCOI (Single Controller Ownership Invariant) | At any recorded event, `count(controller=true) ≤ 1` | Implemented |
-| O2 Unintended transfer | ControllerRef A→B on same UID without expected orphan/DELETE | Implemented |
+| O2 Unintended transfer | ControllerRef A→B on same `(resource, uid)` without expected orphan/DELETE | Implemented |
 | O3 Observation mismatch | Controller belief ≠ API ControllerRef | Defined, not implemented |
 | O4 Behavioral thrash | Ownership fight / thrash while O1 holds | Defined, not implemented |
 

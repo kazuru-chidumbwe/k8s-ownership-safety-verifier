@@ -8,6 +8,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 Citation / essay pins (`blog-*`) remain valid reproducibility anchors.
 Prefer **SemVer** (`vX.Y.Z`) for SoftwareX / package citations; see [`docs/TAGS.md`](docs/TAGS.md).
 
+## [0.1.3] — 2026-07-28
+
+### Fixed
+
+- O2 state (`last_ctrl`, `orphaned`) now keyed by `(resource, uid)`, matching `last_rv` and the documented identity contract. Prevents false O2 FAIL when synthetic traces reuse a UID string across resource types.
+
+### Added
+
+- Fixture `fixtures/o2-cross-resource-shared-uid.jsonl` (expect PASS) wired into `make smoke-fixtures`.
+
 ## [0.1.2] — 2026-07-28
 
 ### Added
@@ -39,3 +49,4 @@ Prefer **SemVer** (`vX.Y.Z`) for SoftwareX / package citations; see [`docs/TAGS.
 [0.1.0]: https://github.com/kazuru-chidumbwe/k8s-ownership-safety-verifier/releases/tag/v0.1.0
 [0.1.1]: https://github.com/kazuru-chidumbwe/k8s-ownership-safety-verifier/releases/tag/v0.1.1
 [0.1.2]: https://github.com/kazuru-chidumbwe/k8s-ownership-safety-verifier/releases/tag/v0.1.2
+[0.1.3]: https://github.com/kazuru-chidumbwe/k8s-ownership-safety-verifier/releases/tag/v0.1.3

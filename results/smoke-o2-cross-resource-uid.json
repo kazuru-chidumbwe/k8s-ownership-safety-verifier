@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "trace_id": "o2-cross-resource-shared-uid",
+  "events": 2,
+  "violations": [],
+  "suppressions": [],
+  "notes": [
+    "O1 PASS; O2 PASS",
+    "Caveat: PASS does not prove absence of unobserved short-lived dual-owner states"
+  ],
+  "event_type_counts": {
+    "ADDED": 2
+  },
+  "resource_counts": {
+    "pod": 1,
+    "replicaset": 1
+  },
+  "caveats": [
+    "O1 is incomplete under poll/watch gaps; PASS does not prove absence of short-lived dual-owner states.",
+    "Events are evaluated in time order; no pre-O1 dedup of same resourceVersion."
+  ]
+}

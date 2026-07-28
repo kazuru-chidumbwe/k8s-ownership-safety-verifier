@@ -13,5 +13,10 @@
     "case": "o2-intended-orphan-then-adopt.jsonl",
     "runner_exit": 0,
     "report": "D:\\Project Atlas\\repos\\k8s-ownership-safety-verifier\\results\\smoke-o2-intended.json"
+  },
+  {
+    "case": "o2-cross-resource-shared-uid.jsonl",
+    "runner_exit": 0,
+    "report": "D:\\Project Atlas\\repos\\k8s-ownership-safety-verifier\\results\\smoke-o2-cross-resource-uid.json"
   }
 ]

@@ -4,9 +4,12 @@
 O1 (Snapshot SCOI — Single Controller Ownership Invariant): at any persisted event, count(controller=true) <= 1.
      Evaluated per event; object identity includes resource type + uid.
      Negative results do NOT prove absence — poll/watch may miss short-lived revisions.
-O2 (Unintended transfer): same object UID changes ControllerRef A->B without
-     an intervening orphan (no controller owner) or DELETE of that UID.
+O2 (Unintended transfer): same (resource, uid) changes ControllerRef A->B without
+     an intervening orphan (no controller owner) or DELETE of that object.
      Handoff within one observed owner-set uses prior timeline state (last_ctrl).
+     last_ctrl / orphaned are keyed by (resource, uid) — same identity as last_rv —
+     so a pod and an unrelated ReplicaSet must never share O2 state even if a
+     synthetic fixture reuses the same UID string.
 
 O3/O4 are out of scope until belief-state instrumentation exists.
 """
@@ -111,9 +114,11 @@ def _sort_events(events: list[dict[str, Any]]) -> list[tuple[int, dict[str, Any]
 
 def check_trace(events: list[dict[str, Any]], trace_id: str = "") -> Report:
     report = Report(status="PASS", trace_id=trace_id or "unknown", events=len(events))
-    last_ctrl: dict[str, str | None] = {}
-    orphaned: dict[str, bool] = {}
-    # (resource, uid) -> last seen resourceVersion as int if parseable
+    # O2 + RV continuity share the same object identity: (resource, uid).
+    # Never key O2 state by uid alone — synthetic/adversarial fixtures may reuse
+    # UID strings across resource types; real API-server UUIDs do not collide.
+    last_ctrl: dict[tuple[str, str], str | None] = {}
+    orphaned: dict[tuple[str, str], bool] = {}
     last_rv: dict[tuple[str, str], int] = {}
     gaps = 0
 
@@ -123,8 +128,9 @@ def check_trace(events: list[dict[str, Any]], trace_id: str = "") -> Report:
         resource = str(ev.get("resource") or ev.get("kind") or "object").lower()
         name = str(ev.get("name") or "")
         ns = str(ev.get("namespace") or "default")
-        # resource type is part of identity — never merge pod vs replicaset by RV alone
+        # resource type is part of identity — never merge pod vs replicaset by RV or O2 state
         key = f"{resource}/{ns}/{name}"
+        rk = (resource, uid)
         owners = ev.get("owners") or []
 
         report.event_type_counts[etype] = report.event_type_counts.get(etype, 0) + 1
@@ -146,7 +152,6 @@ def check_trace(events: list[dict[str, Any]], trace_id: str = "") -> Report:
         rv_raw = str(ev.get("resourceVersion") or "")
         if rv_raw.isdigit() and etype not in ("DELETE", "DELETED"):
             rv = int(rv_raw)
-            rk = (resource, uid)
             prev_rv = last_rv.get(rk)
             if prev_rv is not None and rv < prev_rv:
                 gaps += 1
@@ -163,9 +168,9 @@ def check_trace(events: list[dict[str, Any]], trace_id: str = "") -> Report:
             last_rv[rk] = rv
 
         if etype in ("DELETE", "DELETED"):
-            last_ctrl.pop(uid, None)
-            orphaned.pop(uid, None)
-            last_rv.pop((resource, uid), None)
+            last_ctrl.pop(rk, None)
+            orphaned.pop(rk, None)
+            last_rv.pop(rk, None)
             continue
 
         # O1 — evaluate this snapshot before any dedup; dual controller = FAIL
@@ -186,8 +191,8 @@ def check_trace(events: list[dict[str, Any]], trace_id: str = "") -> Report:
 
         cur = _ctrl_uid(owners)
         if cur is None:
-            if last_ctrl.get(uid) is not None:
-                orphaned[uid] = True
+            if last_ctrl.get(rk) is not None:
+                orphaned[rk] = True
                 report.suppressions.append(
                     Suppression(
                         reason="orphan_observed",
@@ -197,14 +202,14 @@ def check_trace(events: list[dict[str, Any]], trace_id: str = "") -> Report:
                         detail="controller owner cleared; subsequent adopt may be intended",
                     )
                 )
-            last_ctrl[uid] = None
+            last_ctrl[rk] = None
             continue
 
-        prev = last_ctrl.get(uid)
+        prev = last_ctrl.get(rk)
         if prev is not None and prev != cur:
-            if orphaned.get(uid):
-                orphaned[uid] = False
-                last_ctrl[uid] = cur
+            if orphaned.get(rk):
+                orphaned[rk] = False
+                last_ctrl[rk] = cur
                 report.suppressions.append(
                     Suppression(
                         reason="intended_orphan_then_adopt",
@@ -226,8 +231,8 @@ def check_trace(events: list[dict[str, Any]], trace_id: str = "") -> Report:
                     new_controller=cur,
                 )
             )
-        last_ctrl[uid] = cur
-        orphaned[uid] = False
+        last_ctrl[rk] = cur
+        orphaned[rk] = False
 
     if report.violations:
         report.status = "FAIL"

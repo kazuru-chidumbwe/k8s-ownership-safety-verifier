@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Offline smoke: synthetic O1 FAIL, O2 FAIL, intended orphan PASS."""
+"""Offline smoke: synthetic O1 FAIL, O2 FAIL, intended orphan PASS, cross-resource UID PASS."""
 from __future__ import annotations
 
 import json
@@ -20,6 +20,12 @@ def main() -> int:
         (FIX / "o1-dual-controller.jsonl", RES / "smoke-o1.json", ["--expect", "FAIL", "--expect-oracle", "O1"]),
         (FIX / "o2-unintended-transfer.jsonl", RES / "smoke-o2.json", ["--expect", "FAIL", "--expect-oracle", "O2"]),
         (FIX / "o2-intended-orphan-then-adopt.jsonl", RES / "smoke-o2-intended.json", ["--expect", "PASS"]),
+        # Regression: uid-only O2 keys false-FAIL across resource types; must PASS.
+        (
+            FIX / "o2-cross-resource-shared-uid.jsonl",
+            RES / "smoke-o2-cross-resource-uid.json",
+            ["--expect", "PASS"],
+        ),
     ]
     failed = 0
     summary = []
