@@ -1,6 +1,6 @@
 # KOSV — Kubernetes Ownership Safety Verifier
 
-Research instrument for measuring Kubernetes ownership safety (`ownerReferences` / ControllerRef) with explicit oracles, normalized traces, and calibrated fault injection.
+Research instrument for measuring Kubernetes ownership safety (`ownerReferences` / ControllerRef) with explicit oracles, normalized traces, and laboratory fault injection.
 
 KOSV is aimed at researchers studying controller / ownership correctness under controlled conditions. It is not an operator dashboard and does not claim that Kubernetes is safe or unsafe.
 
@@ -14,12 +14,12 @@ License: MIT · SoftwareX gate file: [`Licence.txt`](Licence.txt) (same text as 
 ```bash
 git clone https://github.com/kazuru-chidumbwe/k8s-ownership-safety-verifier.git
 cd k8s-ownership-safety-verifier
-git checkout v0.1.2   # SoftwareX / package cite pin
+git checkout v0.1.5   # SoftwareX / package cite pin
 
 make smoke-fixtures
 ```
 
-Runs synthetic O1 FAIL, O2 FAIL, and intended-orphan PASS fixtures through the verifier. Dependencies: Python 3 standard library only (see [`requirements.txt`](requirements.txt)).
+Runs synthetic O1 FAIL, O2 FAIL, intended-orphan PASS, and cross-resource UID PASS fixtures through the verifier. Dependencies: Python 3 standard library only (see [`requirements.txt`](requirements.txt)).
 
 ### 2 — Optional Kind laboratory smoke
 
@@ -35,12 +35,12 @@ Requires Docker, `kind`, and `kubectl`. Kind is a **laboratory** cluster only �
 ```text
 Seke Kazuru. KOSV: Kubernetes Ownership Safety Verifier.
 https://github.com/kazuru-chidumbwe/k8s-ownership-safety-verifier
-Tag: v0.1.2
+Tag: v0.1.5
 ```
 
-Essay pin `blog-kosv01-2026-07` aliases the same tree — see [`docs/TAGS.md`](docs/TAGS.md). Add the SoftwareX / Zenodo citation when published.
+Essay pin `blog-kosv01-2026-07` remains a methodology freeze — see [`docs/TAGS.md`](docs/TAGS.md). Add the SoftwareX / Zenodo citation when published.
 
-**Calibration matrix (lab, optional):** `make matrix` — 20-run E0–E3 under Kind (needs Docker/`kind`/`kubectl`).
+**Validation matrix (lab, optional):** `make matrix` — 20-run E0–E3 under Kind (needs Docker/`kind`/`kubectl`). Host `delay_proxy` self-tests in each run are **tool calibration**; the O1/O2 PASS/FAIL outcomes are **instrument validation**.
 
 ## Architecture
 
@@ -70,12 +70,13 @@ Concrete reuse paths (new ownership path, new oracle, O3 once belief traces exis
 | [`docs/THREAT-MODEL.md`](docs/THREAT-MODEL.md) | Adversary / trust assumptions |
 | [`docs/evidence/fault-reach-2026-07-27/`](docs/evidence/fault-reach-2026-07-27/) | Primary evidence: eth0 netem path reach |
 | [`docs/TAGS.md`](docs/TAGS.md) | SemVer + citation pins |
+| [`docs/TERMINOLOGY.md`](docs/TERMINOLOGY.md) | Calibration vs validation |
 | [`CHANGELOG.md`](CHANGELOG.md) | SemVer history |
 | [`REPRODUCTION.md`](REPRODUCTION.md) | Independent cold-reproduction record |
 | [`docs/SCOPE-ISOLATION.md`](docs/SCOPE-ISOLATION.md) | Kind lab scope / isolation |
 | [`docs/EXTENDING.md`](docs/EXTENDING.md) | Add ownership path or oracle |
 | [`EVIDENCE.md`](EVIDENCE.md) | Smoke evidence summary |
-| [`MATRIX-ANALYSIS.md`](MATRIX-ANALYSIS.md) | 20-run calibration analysis |
+| [`MATRIX-ANALYSIS.md`](MATRIX-ANALYSIS.md) | 20-run instrument validation analysis |
 
 ## Layout
 
@@ -87,7 +88,7 @@ Concrete reuse paths (new ownership path, new oracle, O3 once belief traces exis
 | `injector/` | Delay tooling (`tc netem` on Kind `eth0` = collector↔API path; optional host delay_proxy for self-tests) |
 | `experiments/` | Fixture smoke, Kind smoke, matrix, scale runners |
 | `results/` | Committed smoke reports |
-| `matrix/runs/` | Calibration archives |
+| `matrix/runs/` | Instrument-validation archives |
 
 ## Claim discipline
 

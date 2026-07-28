@@ -27,4 +27,4 @@ O3 (controller belief ≠ API ControllerRef) and O4 (thrash under O1) require in
 
 ## Add a fault model
 
-Prefer deterministic, documented injectors. For Kind **collector-to-API** delay, v0 uses **`tc netem` on `eth0`**. Do not claim API↔controller delay unless the injector actually hits that path (`lo` netem or control-plane interception — see THREAT-MODEL). Document calibration method and ±tolerance.
+Prefer deterministic, documented injectors. For Kind **collector-to-API** delay, v0 uses **`tc netem` on `eth0`**. Do not claim API↔controller delay unless the injector actually hits that path (`lo` netem or control-plane interception — see THREAT-MODEL). Document how the injector was verified (fault-reach evidence) and, for host `delay_proxy`, the self-test calibration method and ±tolerance.
