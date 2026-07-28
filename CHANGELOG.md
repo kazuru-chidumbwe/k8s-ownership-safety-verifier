@@ -6,7 +6,21 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 Citation / essay pins (`blog-*`) remain valid reproducibility anchors.
-Prefer **SemVer** (`vX.Y.Z`) for SoftwarX / package citations; see [`docs/TAGS.md`](docs/TAGS.md).
+Prefer **SemVer** (`vX.Y.Z`) for SoftwareX / package citations; see [`docs/TAGS.md`](docs/TAGS.md).
+
+## [0.1.2] — 2026-07-28
+
+### Added
+
+- `experiments/analyze_poll_gaps.py` (Table B gap definitions pinned to code).
+- SoftwareX-style Quick Start, architecture figure, and `Licence.txt` GitHub gate.
+- Regenerated [`docs/TAGS.md`](docs/TAGS.md) commit hashes from `git rev-parse --short` (no hand-typed SHAs).
+
+### Fixed
+
+- SemVer tag order now matches commit chronology (`v0.1.0` → `v0.1.1` → `v0.1.2`).
+- Spelling: SoftwarX → SoftwareX in public docs.
+- [`REPRODUCTION.md`](REPRODUCTION.md) no longer names a specific pending reviewer; remains an empty independent-repro template until a third party fills a row.
 
 ## [0.1.1] — 2026-07-27
 
@@ -18,8 +32,10 @@ Prefer **SemVer** (`vX.Y.Z`) for SoftwarX / package citations; see [`docs/TAGS.m
 
 ### Added
 
-- First SemVer release for SoftwarX / package citation.
+- First SemVer release for SoftwareX / package citation.
 - Essay pin `blog-kosv01-2026-07` (`e3532ce`) remains the KOSV-01 methodology cite.
 - `CHANGELOG.md` and SemVer tag policy in `docs/TAGS.md`.
 
 [0.1.0]: https://github.com/kazuru-chidumbwe/k8s-ownership-safety-verifier/releases/tag/v0.1.0
+[0.1.1]: https://github.com/kazuru-chidumbwe/k8s-ownership-safety-verifier/releases/tag/v0.1.1
+[0.1.2]: https://github.com/kazuru-chidumbwe/k8s-ownership-safety-verifier/releases/tag/v0.1.2
