@@ -38,7 +38,7 @@ https://github.com/kazuru-chidumbwe/k8s-ownership-safety-verifier
 Tag: v0.1.5
 ```
 
-Essay pin `blog-kosv01-2026-07` remains a methodology freeze — see [`docs/TAGS.md`](docs/TAGS.md). Add the SoftwareX / Zenodo citation when published.
+Methodology / package cite: **`v0.1.5`** only — see [`docs/TAGS.md`](docs/TAGS.md). The old essay tag `blog-kosv01-2026-07` was deleted (superseded pre-fault-reach snapshot). Add the journal / Zenodo citation when published.
 
 **Validation matrix (lab, optional):** `make matrix` — 20-run E0–E3 under Kind (needs Docker/`kind`/`kubectl`). Host `delay_proxy` self-tests in each run are **tool calibration**; the O1/O2 PASS/FAIL outcomes are **instrument validation**.
 
