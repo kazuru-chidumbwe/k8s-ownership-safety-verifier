@@ -8,36 +8,27 @@ Publication-quality figure (also used in the SoftwareX manuscript and README):
 
 ![KOSV architecture](figures/fig1-kosv-architecture.svg)
 
-ASCII overview:
+Line overview (same topology as the former ASCII sketch):
+
+![KOSV architecture line diagram](figures/fig-architecture-line.svg)
 
 ```text
-┌────────────────────┐     ┌─────────────────────┐
-│ Workload Generator │     │   Fault Injector    │
-│ (Deployment create │     │  • tc netem delay   │
-│  / scale scripts)  │     │  • controller-mgr   │
-└─────────┬──────────┘     │    restart          │
-          │                └──────────┬──────────┘
-          ▼                           │
-   ┌──────────────────────────────────┴──────────┐
-   │         Kind laboratory cluster (v1.31.x)   │
-   └──────────────────────┬──────────────────────┘
-                          │ ownerReferences
-                          ▼
-                 ┌─────────────────┐
-                 │ Trace Collector │  (kubectl poll / watch)
-                 └────────┬────────┘
-                          ▼
-                 ┌─────────────────┐
-                 │ Event Normalizer│  → JSONL (docs/SCHEMA.md)
-                 └────────┬────────┘
-                          ▼
-                 ┌─────────────────┐
-                 │    Verifier     │  O1 / O2 (O3/O4 extension points)
-                 └────────┬────────┘
-                          ▼
-                      report JSON
+Workload Generator + Fault Injector
+        │                    │
+        └────────┬───────────┘
+                 ▼
+     Kind laboratory cluster (v1.31.x)
+                 │ ownerReferences
+                 ▼
+          Trace Collector  (kubectl poll / watch)
+                 ▼
+         Event Normalizer  → JSONL (docs/SCHEMA.md)
+                 ▼
+             Verifier  O1 / O2 (O3/O4 extension points)
+                 ▼
+            report JSON
 
-   Synthetic fixtures ──────────────────────────► Verifier (smoke)
+Synthetic fixtures ──smoke──► Verifier
 ```
 
 ## Roles
