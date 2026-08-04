@@ -4,32 +4,11 @@ KOSV is a **research instrument** for measuring Kubernetes ownership safety. It 
 
 ## Component diagram
 
-Publication-quality figure (also used in the SoftwareX manuscript and README):
+Publication-quality figure (also used in the SoftwareX manuscript, README, and KOSV-01 blog):
 
 ![KOSV architecture](figures/fig1-kosv-architecture.svg)
 
-Line overview (same topology as the former ASCII sketch):
-
-![KOSV architecture line diagram](figures/fig-architecture-line.svg)
-
-```text
-Workload Generator + Fault Injector
-        │                    │
-        └────────┬───────────┘
-                 ▼
-     Kind laboratory cluster (v1.31.x)
-                 │ ownerReferences
-                 ▼
-          Trace Collector  (kubectl poll / watch)
-                 ▼
-         Event Normalizer  → JSONL (docs/SCHEMA.md)
-                 ▼
-             Verifier  O1 / O2 (O3/O4 extension points)
-                 ▼
-            report JSON
-
-Synthetic fixtures ──smoke──► Verifier
-```
+*Figure. Workload generation and fault injection drive a Kind laboratory cluster; the collector polls ownership, the normalizer emits JSONL, and the verifier evaluates O1/O2 (with O3/O4 as extension points). Synthetic fixtures exercise the verifier offline (smoke). Kind `eth0` `tc netem` delays the host collector (`kubectl`)↔API path; controller-manager↔API on single-node Kind is local (`lo`) and is not delayed by `eth0` netem.*
 
 ## Roles
 
