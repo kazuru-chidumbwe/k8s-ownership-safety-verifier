@@ -4,7 +4,6 @@ Research instrument for measuring Kubernetes ownership safety (`ownerReferences`
 
 KOSV is aimed at researchers studying controller / ownership correctness under controlled conditions. It is not an operator dashboard and does not claim that Kubernetes is safe or unsafe.
 
-Author: [Seke Kazuru](https://orcid.org/0009-0002-4099-1059) · `kazuruuni@gmail.com`  
 License: MIT · SoftwareX gate file: [`Licence.txt`](Licence.txt) (same text as [`LICENSE`](LICENSE))
 
 ## Quick Start (3 steps)
