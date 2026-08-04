@@ -44,7 +44,7 @@ Methodology / package cite: **`v0.1.5`** only — see [`docs/TAGS.md`](docs/TAGS
 
 ## Architecture
 
-![KOSV architecture](docs/figures/fig1-kosv-architecture.png)
+![KOSV architecture](docs/figures/fig1-kosv-architecture.svg)
 
 *Figure: Workload generation and fault injection drive a Kind laboratory cluster; ownership observations are collected, normalized to JSONL, and evaluated by the verifier (O1/O2). Synthetic fixtures exercise the verifier without a cluster. Kind `eth0` `tc netem` delays the host collector (`kubectl`)↔API path; controller-manager↔API on single-node Kind is local (`lo`) and is not delayed by `eth0` netem. Details: [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md).*
 
