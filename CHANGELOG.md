@@ -5,8 +5,14 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-Citation / essay pins (`blog-*`) remain valid reproducibility anchors.
-Prefer **SemVer** (`vX.Y.Z`) for SoftwareX / package citations; see [`docs/TAGS.md`](docs/TAGS.md).
+Prefer **SemVer** (`vX.Y.Z`) for blog / package / paper citations; see [`docs/TAGS.md`](docs/TAGS.md).
+Current public cite: **`v0.1.5`**.
+
+## Unreleased
+
+### Removed
+
+- Git tag `blog-kosv01-2026-07` deleted (2026-08-04). It was a pre-fault-reach / pre-O2-identity-fix snapshot and contradicted `v0.1.5` (UID-only O2 keying; incorrect eth0-as-controller-path framing). **Do not cite.** Use `v0.1.5`.
 
 ## [0.1.5] — 2026-07-28
 
@@ -56,8 +62,8 @@ Prefer **SemVer** (`vX.Y.Z`) for SoftwareX / package citations; see [`docs/TAGS.
 ### Added
 
 - First SemVer release for SoftwareX / package citation.
-- Essay pin `blog-kosv01-2026-07` (`e3532ce`) remains the KOSV-01 methodology cite.
 - `CHANGELOG.md` and SemVer tag policy in `docs/TAGS.md`.
+- *(Historical note: essay tag `blog-kosv01-2026-07` was cut near this release and later **deleted** 2026-08-04 as superseded — see Unreleased.)*
 
 [0.1.0]: https://github.com/kazuru-chidumbwe/k8s-ownership-safety-verifier/releases/tag/v0.1.0
 [0.1.1]: https://github.com/kazuru-chidumbwe/k8s-ownership-safety-verifier/releases/tag/v0.1.1
