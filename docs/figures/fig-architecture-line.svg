@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="720" viewBox="0 0 720 720">
+  <!-- KOSV architecture line diagram  matches docs/ARCHITECTURE.md ASCII overview -->
+  <rect width="720" height="720" fill="#ffffff"/>
+
+  <defs>
+    <marker id="arrBlue" markerWidth="9" markerHeight="9" refX="7" refY="3.5" orient="auto">
+      <path d="M0,0 L7,3.5 L0,7 Z" fill="#2563eb"/>
+    </marker>
+    <marker id="arrAmber" markerWidth="9" markerHeight="9" refX="7" refY="3.5" orient="auto">
+      <path d="M0,0 L7,3.5 L0,7 Z" fill="#d97706"/>
+    </marker>
+    <marker id="arrTeal" markerWidth="9" markerHeight="9" refX="7" refY="3.5" orient="auto">
+      <path d="M0,0 L7,3.5 L0,7 Z" fill="#0f766e"/>
+    </marker>
+    <marker id="arrInk" markerWidth="9" markerHeight="9" refX="7" refY="3.5" orient="auto">
+      <path d="M0,0 L7,3.5 L0,7 Z" fill="#334155"/>
+    </marker>
+    <marker id="arrGray" markerWidth="9" markerHeight="9" refX="7" refY="3.5" orient="auto">
+      <path d="M0,0 L7,3.5 L0,7 Z" fill="#64748b"/>
+    </marker>
+  </defs>
+
+  <!-- Workload Generator -->
+  <rect x="48" y="32" width="280" height="88" rx="4" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="188" y="66" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="14" font-weight="700" fill="#1e293b">Workload Generator</text>
+  <text x="188" y="88" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#475569">Deployment create / scale scripts</text>
+
+  <!-- Fault Injector -->
+  <rect x="392" y="32" width="280" height="88" rx="4" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+  <text x="532" y="60" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="14" font-weight="700" fill="#1e293b">Fault Injector</text>
+  <text x="532" y="82" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#475569">" tc netem delay (eth0)</text>
+  <text x="532" y="100" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#475569">" controller-manager restart</text>
+
+  <!-- Arrows into Kind -->
+  <line x1="188" y1="120" x2="188" y2="156" stroke="#2563eb" stroke-width="1.5" marker-end="url(#arrBlue)"/>
+  <line x1="532" y1="120" x2="532" y2="156" stroke="#d97706" stroke-width="1.5" marker-end="url(#arrAmber)"/>
+  <line x1="188" y1="164" x2="360" y2="164" stroke="#0f766e" stroke-width="1.25" fill="none"/>
+  <line x1="532" y1="164" x2="360" y2="164" stroke="#0f766e" stroke-width="1.25" fill="none"/>
+  <line x1="360" y1="164" x2="360" y2="188" stroke="#0f766e" stroke-width="1.5" marker-end="url(#arrTeal)"/>
+
+  <!-- Kind laboratory cluster -->
+  <rect x="120" y="188" width="480" height="64" rx="4" fill="#ccfbf1" stroke="#0f766e" stroke-width="1.6"/>
+  <text x="360" y="226" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="14" font-weight="700" fill="#0f766e">Kind laboratory cluster (v1.31.x)</text>
+
+  <!-- ownerReferences arrow -->
+  <line x1="360" y1="252" x2="360" y2="292" stroke="#0f766e" stroke-width="1.5" marker-end="url(#arrTeal)"/>
+  <text x="372" y="278" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#0f766e">ownerReferences</text>
+
+  <!-- Trace Collector -->
+  <rect x="200" y="292" width="320" height="56" rx="4" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="360" y="316" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="14" font-weight="700" fill="#1e293b">Trace Collector</text>
+  <text x="360" y="336" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#475569">kubectl poll / watch</text>
+
+  <line x1="360" y1="348" x2="360" y2="388" stroke="#2563eb" stroke-width="1.5" marker-end="url(#arrBlue)"/>
+
+  <!-- Event Normalizer -->
+  <rect x="200" y="388" width="320" height="56" rx="4" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="360" y="412" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="14" font-weight="700" fill="#1e293b">Event Normalizer</text>
+  <text x="360" y="432" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#475569">’ JSONL (docs/SCHEMA.md)</text>
+
+  <line x1="360" y1="444" x2="360" y2="484" stroke="#2563eb" stroke-width="1.5" marker-end="url(#arrBlue)"/>
+
+  <!-- Verifier -->
+  <rect x="200" y="484" width="320" height="56" rx="4" fill="#dcfce7" stroke="#15803d" stroke-width="1.5"/>
+  <text x="360" y="508" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="14" font-weight="700" fill="#1e293b">Verifier</text>
+  <text x="360" y="528" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#475569">O1 / O2 (O3/O4 extension points)</text>
+
+  <line x1="360" y1="540" x2="360" y2="580" stroke="#334155" stroke-width="1.5" marker-end="url(#arrInk)"/>
+
+  <!-- report JSON -->
+  <rect x="240" y="580" width="240" height="44" rx="4" fill="#f1f5f9" stroke="#334155" stroke-width="1.5"/>
+  <text x="360" y="607" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#1e293b">report JSON</text>
+
+  <!-- Synthetic fixtures ’ Verifier (smoke) -->
+  <rect x="48" y="640" width="200" height="44" rx="4" fill="#f1f5f9" stroke="#64748b" stroke-width="1.25"/>
+  <text x="148" y="667" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="600" fill="#334155">Synthetic fixtures</text>
+
+  <line x1="248" y1="662" x2="320" y2="540" stroke="#64748b" stroke-width="1.35" stroke-dasharray="6 4" marker-end="url(#arrGray)"/>
+  <text x="300" y="612" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#64748b">smoke</text>
+</svg>
