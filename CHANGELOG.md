@@ -48,7 +48,7 @@ Current public cite: **`v0.1.5`**.
 ### Fixed
 
 - SemVer tags ordered to match commit chronology (`v0.1.0` → `v0.1.1` → `v0.1.2`).
-- Spelling: SoftwarX → SoftwareX in public docs.
+- Spelling: SoftwareX → SoftwareX in public docs.
 - [`REPRODUCTION.md`](REPRODUCTION.md) kept as an empty third-party template until an independent row is filled.
 
 ## [0.1.1] — 2026-07-27
