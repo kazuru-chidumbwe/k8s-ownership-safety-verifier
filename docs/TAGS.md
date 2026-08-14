@@ -4,7 +4,7 @@ Annotated tags mark reproducible anchors. The default branch may move after a ta
 
 | Tag | Commit | Purpose |
 | --- | --- | --- |
-| [`v0.1.6`](https://github.com/kazuru-chidumbwe/k8s-ownership-safety-verifier/releases/tag/v0.1.6) | *(pending)* | **Current cite** — primary matrix `20260814T083135Z` (Kind v1.34.0) · seeded violations script |
+| [`v0.1.6`](https://github.com/kazuru-chidumbwe/k8s-ownership-safety-verifier/releases/tag/v0.1.6) | `722ff70` | **Current cite** — primary matrix `20260814T083135Z` (Kind v1.34.0) · seeded violations script |
 | [`v0.1.5`](https://github.com/kazuru-chidumbwe/k8s-ownership-safety-verifier/releases/tag/v0.1.5) | `6c53e4e` | Calibration vs validation lock · superseded by v0.1.6 for matrix stamp |
 | [`v0.1.4`](https://github.com/kazuru-chidumbwe/k8s-ownership-safety-verifier/releases/tag/v0.1.4) | `c86b558` | Ordinary release-notes voice in TAGS |
 | [`v0.1.3`](https://github.com/kazuru-chidumbwe/k8s-ownership-safety-verifier/releases/tag/v0.1.3) | `74b211f` | O2 identity keyed by resource + uid |
