@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""20-run matrix: E0/E1/E2/E3 × 5.
+"""Instrument-validation matrix: E0/E1/E2/E3 × N runs (default N=5; use --runs for 40-pack).
 
 E0: 0ms baseline
 E1: 500ms collector-to-API delay (delay_proxy self-test + tc netem on Kind eth0)
@@ -289,30 +289,41 @@ def main() -> int:
     p.add_argument("--out", type=Path, default=ROOT / "matrix" / "runs")
     p.add_argument("--poll-seconds", type=float, default=30.0)
     p.add_argument("--only", default="", help="Comma experiments e.g. E0,E1")
+    p.add_argument(
+        "--runs",
+        type=int,
+        default=5,
+        help="Runs per experiment cell (default 5 → 20 total; use 10 → 40 total)",
+    )
     args = p.parse_args()
+
+    if args.runs < 1:
+        raise SystemExit("--runs must be >= 1")
 
     stamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
     out_dir = args.out / stamp
     out_dir.mkdir(parents=True, exist_ok=True)
 
+    n = args.runs
     plan = [
-        ("E0", 0, False, 5),
-        ("E1", 500, False, 5),
-        ("E2", 2000, False, 5),
-        ("E3", 0, True, 5),
+        ("E0", 0, False, n),
+        ("E1", 500, False, n),
+        ("E2", 2000, False, n),
+        ("E3", 0, True, n),
     ]
     if args.only:
         want = {x.strip().upper() for x in args.only.split(",") if x.strip()}
         plan = [row for row in plan if row[0] in want]
 
     results = []
-    for experiment, delay, restart, n in plan:
-        for i in range(1, n + 1):
+    for experiment, delay, restart, n_runs in plan:
+        for i in range(1, n_runs + 1):
             results.append(run_one(experiment, i, delay, restart, out_dir, args.poll_seconds))
 
     summary = {
         "matrix_id": stamp,
         "runs": len(results),
+        "runs_per_cell": n,
         "by_status": {},
         "by_experiment": {},
         "results": results,

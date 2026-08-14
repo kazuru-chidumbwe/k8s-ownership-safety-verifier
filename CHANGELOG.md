@@ -6,13 +6,25 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 Prefer **SemVer** (`vX.Y.Z`) for blog / package / paper citations; see [`docs/TAGS.md`](docs/TAGS.md).
-Current public cite: **`v0.1.5`**.
+Current public cite: **`v0.1.6`**.
 
 ## Unreleased
 
+## [0.1.6] — 2026-08-14
+
+### Added
+
+- `experiments/run_seeded_violations.py`: observation-layer O1/O2 seeded violation arms (2/2 detected).
+- `deploy/kind/cluster-v1.34.yaml`; default Kind pin **`kindest/node:v1.34.0`**.
+
+### Changed
+
+- Primary instrument-validation matrix stamp **`20260814T083135Z`** (20/20 PASS on v1.34.0).
+- [`MATRIX-ANALYSIS.md`](MATRIX-ANALYSIS.md) and README updated with primary matrix cite and poll-gap p50 from v1.34 traces.
+
 ### Removed
 
-- Git tag `blog-kosv01-2026-07` deleted (2026-08-04). It was a pre-fault-reach / pre-O2-identity-fix snapshot and contradicted `v0.1.5` (UID-only O2 keying; incorrect eth0-as-controller-path framing). **Do not cite.** Use `v0.1.5`.
+- Git tag `blog-kosv01-2026-07` deleted (2026-08-04). It was a pre-fault-reach / pre-O2-identity-fix snapshot and contradicted current identity contract. **Do not cite.** Use `v0.1.6`.
 
 ## [0.1.5] — 2026-07-28
 
