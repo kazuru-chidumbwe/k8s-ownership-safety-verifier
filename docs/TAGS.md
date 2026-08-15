@@ -4,7 +4,7 @@ Annotated tags mark reproducible anchors. The default branch may move after a ta
 
 | Tag | Commit | Purpose |
 | --- | --- | --- |
-| [`v0.1.10`](https://github.com/kazuru-chidumbwe/k8s-ownership-safety-verifier/releases/tag/v0.1.10) | `89412b4` | **Current cite** — Kind pin in archive metadata (`cluster.json` / `kind_node_image`) |
+| [`v0.1.10`](https://github.com/kazuru-chidumbwe/k8s-ownership-safety-verifier/releases/tag/v0.1.10) | `89412b4` | **Current cite** — Kind pin in archive metadata (`cluster.json` / `kind_node_image`); Lab RepoDigest `kindest/node@sha256:7416a61b42b1662ca6ca89f02028ac133a309a2a30ba309614e8ec94d976dc5a` |
 | [`v0.1.9`](https://github.com/kazuru-chidumbwe/k8s-ownership-safety-verifier/releases/tag/v0.1.9) | `c5f5533` | primary matrix archive `20260814T083135Z` + seeded arms |
 | [`v0.1.8`](https://github.com/kazuru-chidumbwe/k8s-ownership-safety-verifier/releases/tag/v0.1.8) | `6442987` | denser-poll archive `20260815T023902Z` + d/T_eff table |
 | [`v0.1.7`](https://github.com/kazuru-chidumbwe/k8s-ownership-safety-verifier/releases/tag/v0.1.7) | `a3f6ff7` | `--poll-interval` denser-poll CLI · schema vocabulary · fixture smokes |
@@ -19,7 +19,7 @@ Annotated tags mark reproducible anchors. The default branch may move after a ta
 
 **Removed (2026-08-04):** `blog-kosv01-2026-07` — superseded pre-fault-reach / pre-O2-fix snapshot. Do not cite. Use **`v0.1.10`**.
 
-Short hashes are what `git rev-parse --short <tag>^{commit}` reports for that tag. After cutting `v0.1.10`, replace `89412b4` with that short hash.
+Short hashes are what `git rev-parse --short <tag>^{commit}` reports for that tag.
 
 ## Quick checkout
 

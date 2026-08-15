@@ -24,7 +24,7 @@
 | E2 | 2000ms delay | 5 | PASS | 7–7 | ~2003 | **yes** |
 | E3 | clean CM restart (steady state) | 5 | PASS | 15–17 | ~0.9 | yes |
 
-**Environment pin (primary matrix):** Kind `kindest/node:v1.34.0` (kubelet `v1.34.0`); matrix id `20260814T083135Z`. Self-describing archive fields: `matrix/runs/20260814T083135Z/cluster.json`, `SUMMARY.json` keys `kind_node_image` / `kubelet_version`, and each run `meta.json` (Lab attestation backfilled in `v0.1.10`; live capture in runner thereafter).
+**Environment pin (primary matrix):** Kind `kindest/node:v1.34.0` (kubelet `v1.34.0`; Lab RepoDigest `kindest/node@sha256:7416a61b42b1662ca6ca89f02028ac133a309a2a30ba309614e8ec94d976dc5a`); matrix id `20260814T083135Z`. Cite tag **`v0.1.10`** (commit `89412b4`). Self-describing archive fields: `matrix/runs/20260814T083135Z/cluster.json`, `SUMMARY.json` keys `kind_node_image` / `kubelet_version`, and each run `meta.json`.
 
 ```bash
 python experiments/analyze_poll_gaps.py matrix/runs/20260814T083135Z --levels E0,E1,E2
