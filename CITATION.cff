@@ -1,8 +1,8 @@
 cff-version: 1.2.0
 message: "If you use this software, please cite it as below."
 title: "KOSV: Kubernetes Ownership Safety Verifier"
-version: 0.1.6
-date-released: 2026-08-14
+version: 0.1.7
+date-released: 2026-08-15
 authors:
   - family-names: Kazuru
     given-names: Seke
@@ -21,7 +21,7 @@ preferred-citation:
   authors:
     - family-names: Kazuru
       given-names: Seke
-  version: v0.1.6
+  version: v0.1.7
   year: 2026
   url: https://github.com/kazuru-chidumbwe/k8s-ownership-safety-verifier
-  notes: "PeerJ CS manuscript in submission; mint Zenodo DOI before publication."
+  notes: "PeerJ CS manuscript in submission; mint Zenodo DOI before publication. Primary matrix stamp 20260814T083135Z; denser-poll CLI from this tag."

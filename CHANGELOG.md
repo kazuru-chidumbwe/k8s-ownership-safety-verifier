@@ -6,15 +6,15 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 Prefer **SemVer** (`vX.Y.Z`) for blog / package / paper citations; see [`docs/TAGS.md`](docs/TAGS.md).
-Current public cite: **`v0.1.6`**.
+Current public cite: **`v0.1.7`**.
 
-## Unreleased
+## [0.1.7] — 2026-08-15
 
 ### Added
 
 - `experiments/run_matrix.py --poll-interval` (default `1.0`; denser sensitivity e.g. `0.2`). SUMMARY records `poll_interval_s` / `poll_seconds`.
 - Fixture smokes: missing-UID skip, RV-regression INCONCLUSIVE, O2 delete-then-new-UID.
-- `CITATION.cff` for GitHub citation metadata (pins `v0.1.6`).
+- `CITATION.cff` for GitHub citation metadata.
 
 ### Changed
 
@@ -35,7 +35,7 @@ Current public cite: **`v0.1.6`**.
 
 ### Removed
 
-- Git tag `blog-kosv01-2026-07` deleted (2026-08-04). It was a pre-fault-reach / pre-O2-identity-fix snapshot and contradicted current identity contract. **Do not cite.** Use `v0.1.6`.
+- Git tag `blog-kosv01-2026-07` deleted (2026-08-04). It was a pre-fault-reach / pre-O2-identity-fix snapshot and contradicted current identity contract. **Do not cite.** Use `v0.1.7`.
 
 ## [0.1.5] — 2026-07-28
 

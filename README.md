@@ -13,7 +13,7 @@ License: MIT · SoftwareX gate file: [`Licence.txt`](Licence.txt) (same text as 
 ```bash
 git clone https://github.com/kazuru-chidumbwe/k8s-ownership-safety-verifier.git
 cd k8s-ownership-safety-verifier
-git checkout v0.1.6   # SoftwareX / package cite pin
+git checkout v0.1.7   # package cite pin
 
 make smoke-fixtures
 ```
@@ -34,10 +34,10 @@ Requires Docker, `kind`, and `kubectl`. Kind is a **laboratory** cluster only; s
 ```text
 Seke Kazuru. KOSV: Kubernetes Ownership Safety Verifier.
 https://github.com/kazuru-chidumbwe/k8s-ownership-safety-verifier
-Tag: v0.1.6
+Tag: v0.1.7
 ```
 
-Methodology / package cite: **`v0.1.6`** only; see [`docs/TAGS.md`](docs/TAGS.md). The old essay tag `blog-kosv01-2026-07` was deleted (superseded pre-fault-reach snapshot). Add the journal / Zenodo citation when published.
+Methodology / package cite: **`v0.1.7`** (includes primary matrix from `v0.1.6` plus denser-poll `--poll-interval`); see [`docs/TAGS.md`](docs/TAGS.md). The old essay tag `blog-kosv01-2026-07` was deleted (superseded pre-fault-reach snapshot). Add the journal / Zenodo citation when published.
 
 **Primary validation matrix (lab):** id **`20260814T083135Z`**, Kind **`kindest/node:v1.34.0`**, **20/20 PASS** O1/O2 under stated faults. Run locally with `make matrix` (needs Docker/`kind`/`kubectl`). Analysis: [`MATRIX-ANALYSIS.md`](MATRIX-ANALYSIS.md). Host `delay_proxy` self-tests in each run are **tool calibration**; O1/O2 PASS/FAIL outcomes are **instrument validation**.
 
