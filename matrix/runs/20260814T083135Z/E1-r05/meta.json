@@ -68,5 +68,17 @@
   },
   "event_type_counts": {
     "UPDATE": 10
+  },
+  "kind_node_image": "kindest/node:v1.34.0",
+  "kubelet_version": "v1.34.0",
+  "cluster": {
+    "kind_node_image": "kindest/node:v1.34.0",
+    "kubelet_version": "v1.34.0",
+    "kind_node_name": "kosv-control-plane",
+    "kind_cluster_name": "kosv",
+    "deploy_config": "deploy/kind/cluster-v1.34.yaml",
+    "captured_at": "2026-08-15T06:59:20.893792Z",
+    "capture_method": "post_hoc_lab_attestation",
+    "attestation": "2026-08-15 Lab Test Server: docker inspect kosv-control-plane \u2192 kindest/node:v1.34.0; kubectl node kubeletVersion \u2192 v1.34.0. Same pin as deploy/kind/cluster-v1.34.yaml used for these stamps. Original runner did not emit this field; backfilled for archive self-description."
   }
 }

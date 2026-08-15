@@ -6,7 +6,19 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 Prefer **SemVer** (`vX.Y.Z`) for blog / package / paper citations; see [`docs/TAGS.md`](docs/TAGS.md).
-Current public cite: **`v0.1.9`**.
+Current public cite: **`v0.1.10`**.
+
+## [0.1.10] — 2026-08-15
+
+### Added
+
+- `experiments/cluster_env.py` + live `kind_node_image` / `kubelet_version` capture in `run_matrix.py` and `run_seeded_violations.py` (`cluster.json` + SUMMARY + per-run `meta.json`).
+- `experiments/backfill_cluster_pin.py` — Lab-attested pin for archived stamps.
+
+### Changed
+
+- Backfilled `matrix/runs/20260814T083135Z/`, `20260815T023902Z/`, and `seeded-20260814T055833Z/` with `kindest/node:v1.34.0` / kubelet `v1.34.0` (post-hoc Lab attestation; original runners did not emit the field).
+- [`MATRIX-ANALYSIS.md`](MATRIX-ANALYSIS.md) notes self-describing cluster pin paths.
 
 ## [0.1.9] — 2026-08-15
 
@@ -55,7 +67,7 @@ Current public cite: **`v0.1.9`**.
 
 ### Removed
 
-- Git tag `blog-kosv01-2026-07` deleted (2026-08-04). It was a pre-fault-reach / pre-O2-identity-fix snapshot and contradicted current identity contract. **Do not cite.** Use `v0.1.9`.
+- Git tag `blog-kosv01-2026-07` deleted (2026-08-04). It was a pre-fault-reach / pre-O2-identity-fix snapshot and contradicted current identity contract. **Do not cite.** Use `v0.1.10`.
 
 ## [0.1.5] — 2026-07-28
 

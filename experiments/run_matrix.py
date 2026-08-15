@@ -20,9 +20,9 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
+sys.path.insert(0, str(ROOT / "experiments"))
 from verifier.check import check_trace  # noqa: E402
-
-KIND_NODE = "kosv-control-plane"
+from cluster_env import KIND_NODE, capture_cluster_env  # noqa: E402
 
 
 def utc_now() -> str:
@@ -177,6 +177,7 @@ def run_one(
     out_dir: Path,
     poll_seconds: float,
     poll_interval: float = 1.0,
+    cluster: dict | None = None,
 ) -> dict:
     experiment_id = f"{experiment}-r{run_idx:02d}"
     run_dir = out_dir / experiment_id
@@ -198,6 +199,10 @@ def run_one(
         "started": utc_now(),
         "namespace": ns,
     }
+    if cluster:
+        meta["kind_node_image"] = cluster.get("kind_node_image")
+        meta["kubelet_version"] = cluster.get("kubelet_version")
+        meta["cluster"] = cluster
 
     # Proxy calibration (always for E0–E2; E3 records zero-delay proxy sanity)
     cal_path = run_dir / "proxy-latency.json"
@@ -315,6 +320,9 @@ def main() -> int:
     out_dir = args.out / stamp
     out_dir.mkdir(parents=True, exist_ok=True)
 
+    cluster = capture_cluster_env()
+    (out_dir / "cluster.json").write_text(json.dumps(cluster, indent=2) + "\n", encoding="utf-8")
+
     n = args.runs
     plan = [
         ("E0", 0, False, n),
@@ -338,11 +346,15 @@ def main() -> int:
                     out_dir,
                     args.poll_seconds,
                     poll_interval=args.poll_interval,
+                    cluster=cluster,
                 )
             )
 
     summary = {
         "matrix_id": stamp,
+        "kind_node_image": cluster.get("kind_node_image"),
+        "kubelet_version": cluster.get("kubelet_version"),
+        "cluster": cluster,
         "poll_interval_s": args.poll_interval,
         "poll_seconds": args.poll_seconds,
         "runs": len(results),

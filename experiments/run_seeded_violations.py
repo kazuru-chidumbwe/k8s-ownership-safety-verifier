@@ -19,7 +19,9 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
+sys.path.insert(0, str(ROOT / "experiments"))
 from verifier.check import check_trace  # noqa: E402
+from cluster_env import capture_cluster_env  # noqa: E402
 
 
 def sh(cmd: list[str], check: bool = True) -> subprocess.CompletedProcess[str]:
@@ -328,14 +330,28 @@ def main() -> int:
     out = args.out / stamp
     out.mkdir(parents=True, exist_ok=True)
 
+    cluster = capture_cluster_env()
+    (out / "cluster.json").write_text(json.dumps(cluster, indent=2) + "\n", encoding="utf-8")
+
     results = [
         run_baseline(out),
         run_o1(out),
         run_o2(out),
     ]
+    for arm in ("SEEDED-BASELINE", "SEEDED-O1-DUAL", "SEEDED-O2-TRANSFER"):
+        meta_path = out / arm / "meta.json"
+        if meta_path.is_file():
+            meta = json.loads(meta_path.read_text(encoding="utf-8"))
+            meta["kind_node_image"] = cluster.get("kind_node_image")
+            meta["kubelet_version"] = cluster.get("kubelet_version")
+            meta["cluster"] = cluster
+            meta_path.write_text(json.dumps(meta, indent=2) + "\n", encoding="utf-8")
     seeded = [r for r in results if r["id"].startswith("SEEDED-O")]
     summary = {
         "matrix_id": stamp,
+        "kind_node_image": cluster.get("kind_node_image"),
+        "kubelet_version": cluster.get("kubelet_version"),
+        "cluster": cluster,
         "seeded_violations_detected": f"{sum(1 for r in seeded if r['ok'])}/{len(seeded)}",
         "results": results,
     }

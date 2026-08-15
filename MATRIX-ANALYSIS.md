@@ -24,7 +24,7 @@
 | E2 | 2000ms delay | 5 | PASS | 7–7 | ~2003 | **yes** |
 | E3 | clean CM restart (steady state) | 5 | PASS | 15–17 | ~0.9 | yes |
 
-Matrix id: `matrix/runs/20260814T083135Z/` — each run has `trace.jsonl`, `report.json`, `meta.json`, `proxy-latency.json`. **Committed in the public repo from tag `v0.1.9` onward** (Lab Test archive). Gap summary: [`results/primary-poll-gaps-20260814T083135Z.json`](results/primary-poll-gaps-20260814T083135Z.json).
+**Environment pin (primary matrix):** Kind `kindest/node:v1.34.0` (kubelet `v1.34.0`); matrix id `20260814T083135Z`. Self-describing archive fields: `matrix/runs/20260814T083135Z/cluster.json`, `SUMMARY.json` keys `kind_node_image` / `kubelet_version`, and each run `meta.json` (Lab attestation backfilled in `v0.1.10`; live capture in runner thereafter).
 
 ```bash
 python experiments/analyze_poll_gaps.py matrix/runs/20260814T083135Z --levels E0,E1,E2
