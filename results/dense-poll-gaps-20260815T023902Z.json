@@ -1,0 +1,40 @@
+{
+  "matrix_id": "20260815T023902Z",
+  "poll_interval_s": 0.2,
+  "poll_seconds": 30.0,
+  "sweep_gap_ms": 200.0,
+  "kind_node": "kindest/node:v1.34.0",
+  "host": "Lab Test Server",
+  "status": "6/6 PASS",
+  "archive": "matrix/runs/20260815T023902Z/",
+  "by_level": {
+    "E0": {
+      "poll_events": 53,
+      "same_obj_n": 38,
+      "same_obj_p50_ms": 2443.8,
+      "inter_sweep_n": 27,
+      "inter_sweep_p50_ms": 357.5
+    },
+    "E1": {
+      "poll_events": 30,
+      "same_obj_n": 15,
+      "same_obj_p50_ms": 5715.0,
+      "inter_sweep_n": 24,
+      "inter_sweep_p50_ms": 1860.4
+    }
+  },
+  "teff_model": {
+    "definition": "P_detect ≈ min(1, d / T_eff) with T_eff = E0 inter-sweep p50 (ms)",
+    "primary_E0_Teff_ms": 1135,
+    "dense_E0_Teff_ms": 357,
+    "rows": [
+      {"d_ms": 100, "P_primary": 0.088, "P_dense": 0.280},
+      {"d_ms": 200, "P_primary": 0.176, "P_dense": 0.560},
+      {"d_ms": 357, "P_primary": 0.315, "P_dense": 1.0},
+      {"d_ms": 500, "P_primary": 0.441, "P_dense": 1.0},
+      {"d_ms": 1000, "P_primary": 0.881, "P_dense": 1.0},
+      {"d_ms": 1135, "P_primary": 1.0, "P_dense": 1.0}
+    ]
+  },
+  "note": "Supplementary sensitivity check; not a replacement for primary stamp 20260814T083135Z."
+}

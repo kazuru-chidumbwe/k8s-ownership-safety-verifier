@@ -1,0 +1,492 @@
+{
+  "matrix_id": "20260815T023902Z",
+  "poll_interval_s": 0.2,
+  "poll_seconds": 30.0,
+  "runs": 6,
+  "runs_per_cell": 3,
+  "by_status": {
+    "PASS": 6
+  },
+  "by_experiment": {
+    "E0": [
+      {
+        "id": "E0-r01",
+        "status": "PASS",
+        "events": 18
+      },
+      {
+        "id": "E0-r02",
+        "status": "PASS",
+        "events": 17
+      },
+      {
+        "id": "E0-r03",
+        "status": "PASS",
+        "events": 18
+      }
+    ],
+    "E1": [
+      {
+        "id": "E1-r01",
+        "status": "PASS",
+        "events": 10
+      },
+      {
+        "id": "E1-r02",
+        "status": "PASS",
+        "events": 10
+      },
+      {
+        "id": "E1-r03",
+        "status": "PASS",
+        "events": 10
+      }
+    ]
+  },
+  "results": [
+    {
+      "experiment_id": "E0-r01",
+      "experiment": "E0",
+      "run": 1,
+      "delay_ms_configured": 0,
+      "controller_restart": false,
+      "poll_interval_s": 0.2,
+      "poll_seconds": 30.0,
+      "started": "2026-08-15T02:39:02.033894Z",
+      "namespace": "kosv-e0-r01",
+      "proxy_latency": {
+        "n": 30,
+        "delay_ms_configured": 0.0,
+        "mean_ms": 3.081,
+        "p50_ms": 2.786,
+        "p95_ms": 4.239,
+        "p99_ms": 7.468,
+        "min_ms": 1.843,
+        "max_ms": 8.783,
+        "within_10pct": true,
+        "samples_ms": [
+          1.843,
+          1.904,
+          2.075,
+          2.142,
+          2.168,
+          2.173,
+          2.189,
+          2.258,
+          2.37,
+          2.421,
+          2.482,
+          2.483,
+          2.541,
+          2.602,
+          2.755,
+          2.816,
+          2.871,
+          3.04,
+          3.053,
+          3.301,
+          3.352,
+          3.395,
+          3.573,
+          3.582,
+          3.697,
+          3.955,
+          4.118,
+          4.227,
+          4.249,
+          8.783
+        ]
+      },
+      "ended": "2026-08-15T02:39:37.255437Z",
+      "fault_window": {
+        "configured_delay_ms": 0,
+        "tc_applied": false,
+        "ended": "2026-08-15T02:39:37.253227Z",
+        "deployment_ready_pre_scale": true,
+        "deployment_ready_post_scale": true
+      },
+      "events": 18,
+      "status": "PASS",
+      "violations": 0,
+      "suppressions": 0,
+      "resource_counts": {
+        "deployment": 6,
+        "replicaset": 6,
+        "pod": 6
+      },
+      "event_type_counts": {
+        "UPDATE": 18
+      }
+    },
+    {
+      "experiment_id": "E0-r02",
+      "experiment": "E0",
+      "run": 2,
+      "delay_ms_configured": 0,
+      "controller_restart": false,
+      "poll_interval_s": 0.2,
+      "poll_seconds": 30.0,
+      "started": "2026-08-15T02:39:37.434144Z",
+      "namespace": "kosv-e0-r02",
+      "proxy_latency": {
+        "n": 30,
+        "delay_ms_configured": 0.0,
+        "mean_ms": 3.181,
+        "p50_ms": 2.809,
+        "p95_ms": 4.924,
+        "p99_ms": 9.495,
+        "min_ms": 1.603,
+        "max_ms": 11.115,
+        "within_10pct": true,
+        "samples_ms": [
+          1.603,
+          1.985,
+          2.021,
+          2.1,
+          2.198,
+          2.228,
+          2.301,
+          2.373,
+          2.454,
+          2.51,
+          2.56,
+          2.56,
+          2.656,
+          2.675,
+          2.736,
+          2.881,
+          2.891,
+          2.931,
+          3.028,
+          3.033,
+          3.208,
+          3.303,
+          3.558,
+          3.604,
+          3.611,
+          3.686,
+          3.894,
+          4.187,
+          5.527,
+          11.115
+        ]
+      },
+      "ended": "2026-08-15T02:40:12.245978Z",
+      "fault_window": {
+        "configured_delay_ms": 0,
+        "tc_applied": false,
+        "ended": "2026-08-15T02:40:12.244227Z",
+        "deployment_ready_pre_scale": true,
+        "deployment_ready_post_scale": true
+      },
+      "events": 17,
+      "status": "PASS",
+      "violations": 0,
+      "suppressions": 0,
+      "resource_counts": {
+        "deployment": 6,
+        "replicaset": 5,
+        "pod": 6
+      },
+      "event_type_counts": {
+        "UPDATE": 17
+      }
+    },
+    {
+      "experiment_id": "E0-r03",
+      "experiment": "E0",
+      "run": 3,
+      "delay_ms_configured": 0,
+      "controller_restart": false,
+      "poll_interval_s": 0.2,
+      "poll_seconds": 30.0,
+      "started": "2026-08-15T02:40:12.389173Z",
+      "namespace": "kosv-e0-r03",
+      "proxy_latency": {
+        "n": 30,
+        "delay_ms_configured": 0.0,
+        "mean_ms": 2.972,
+        "p50_ms": 2.777,
+        "p95_ms": 3.724,
+        "p99_ms": 7.814,
+        "min_ms": 1.453,
+        "max_ms": 9.482,
+        "within_10pct": true,
+        "samples_ms": [
+          1.453,
+          1.773,
+          1.788,
+          1.927,
+          1.952,
+          2.042,
+          2.18,
+          2.219,
+          2.238,
+          2.253,
+          2.307,
+          2.549,
+          2.569,
+          2.736,
+          2.77,
+          2.785,
+          2.896,
+          3.03,
+          3.045,
+          3.09,
+          3.258,
+          3.461,
+          3.489,
+          3.555,
+          3.581,
+          3.615,
+          3.661,
+          3.717,
+          3.73,
+          9.482
+        ]
+      },
+      "ended": "2026-08-15T02:40:47.358143Z",
+      "fault_window": {
+        "configured_delay_ms": 0,
+        "tc_applied": false,
+        "ended": "2026-08-15T02:40:47.356445Z",
+        "deployment_ready_pre_scale": true,
+        "deployment_ready_post_scale": true
+      },
+      "events": 18,
+      "status": "PASS",
+      "violations": 0,
+      "suppressions": 0,
+      "resource_counts": {
+        "deployment": 6,
+        "replicaset": 5,
+        "pod": 7
+      },
+      "event_type_counts": {
+        "UPDATE": 18
+      }
+    },
+    {
+      "experiment_id": "E1-r01",
+      "experiment": "E1",
+      "run": 1,
+      "delay_ms_configured": 500,
+      "controller_restart": false,
+      "poll_interval_s": 0.2,
+      "poll_seconds": 30.0,
+      "started": "2026-08-15T02:40:47.530553Z",
+      "namespace": "kosv-e1-r01",
+      "proxy_latency": {
+        "n": 30,
+        "delay_ms_configured": 500.0,
+        "mean_ms": 503.254,
+        "p50_ms": 502.963,
+        "p95_ms": 505.843,
+        "p99_ms": 508.721,
+        "min_ms": 501.651,
+        "max_ms": 509.568,
+        "within_10pct": true,
+        "samples_ms": [
+          501.651,
+          501.653,
+          501.809,
+          501.872,
+          502.097,
+          502.109,
+          502.165,
+          502.363,
+          502.503,
+          502.623,
+          502.729,
+          502.757,
+          502.78,
+          502.84,
+          502.927,
+          502.999,
+          503.013,
+          503.116,
+          503.165,
+          503.173,
+          503.221,
+          503.437,
+          503.515,
+          503.685,
+          503.807,
+          504.115,
+          504.435,
+          504.861,
+          506.647,
+          509.568
+        ]
+      },
+      "ended": "2026-08-15T02:42:01.315835Z",
+      "fault_window": {
+        "configured_delay_ms": 500,
+        "tc_applied": true,
+        "ended": "2026-08-15T02:42:01.315076Z",
+        "deployment_ready_pre_scale": true,
+        "deployment_ready_post_scale": true
+      },
+      "events": 10,
+      "status": "PASS",
+      "violations": 0,
+      "suppressions": 0,
+      "resource_counts": {
+        "deployment": 4,
+        "replicaset": 3,
+        "pod": 3
+      },
+      "event_type_counts": {
+        "UPDATE": 10
+      }
+    },
+    {
+      "experiment_id": "E1-r02",
+      "experiment": "E1",
+      "run": 2,
+      "delay_ms_configured": 500,
+      "controller_restart": false,
+      "poll_interval_s": 0.2,
+      "poll_seconds": 30.0,
+      "started": "2026-08-15T02:42:01.487950Z",
+      "namespace": "kosv-e1-r02",
+      "proxy_latency": {
+        "n": 30,
+        "delay_ms_configured": 500.0,
+        "mean_ms": 503.315,
+        "p50_ms": 503.005,
+        "p95_ms": 505.372,
+        "p99_ms": 510.148,
+        "min_ms": 501.648,
+        "max_ms": 511.922,
+        "within_10pct": true,
+        "samples_ms": [
+          501.648,
+          501.927,
+          501.988,
+          502.093,
+          502.189,
+          502.201,
+          502.301,
+          502.457,
+          502.464,
+          502.474,
+          502.579,
+          502.663,
+          502.736,
+          502.769,
+          502.938,
+          503.072,
+          503.128,
+          503.147,
+          503.174,
+          503.193,
+          503.221,
+          503.262,
+          503.417,
+          503.486,
+          503.522,
+          504.336,
+          504.487,
+          504.846,
+          505.803,
+          511.922
+        ]
+      },
+      "ended": "2026-08-15T02:43:15.281530Z",
+      "fault_window": {
+        "configured_delay_ms": 500,
+        "tc_applied": true,
+        "ended": "2026-08-15T02:43:15.279272Z",
+        "deployment_ready_pre_scale": true,
+        "deployment_ready_post_scale": true
+      },
+      "events": 10,
+      "status": "PASS",
+      "violations": 0,
+      "suppressions": 0,
+      "resource_counts": {
+        "deployment": 4,
+        "replicaset": 3,
+        "pod": 3
+      },
+      "event_type_counts": {
+        "UPDATE": 10
+      }
+    },
+    {
+      "experiment_id": "E1-r03",
+      "experiment": "E1",
+      "run": 3,
+      "delay_ms_configured": 500,
+      "controller_restart": false,
+      "poll_interval_s": 0.2,
+      "poll_seconds": 30.0,
+      "started": "2026-08-15T02:43:15.455452Z",
+      "namespace": "kosv-e1-r03",
+      "proxy_latency": {
+        "n": 30,
+        "delay_ms_configured": 500.0,
+        "mean_ms": 503.268,
+        "p50_ms": 503.008,
+        "p95_ms": 505.536,
+        "p99_ms": 507.095,
+        "min_ms": 501.903,
+        "max_ms": 507.539,
+        "within_10pct": true,
+        "samples_ms": [
+          501.903,
+          502.052,
+          502.083,
+          502.112,
+          502.238,
+          502.557,
+          502.604,
+          502.622,
+          502.666,
+          502.793,
+          502.801,
+          502.809,
+          502.908,
+          502.96,
+          503.003,
+          503.014,
+          503.068,
+          503.097,
+          503.194,
+          503.341,
+          503.368,
+          503.369,
+          503.451,
+          503.525,
+          503.781,
+          503.818,
+          504.394,
+          504.961,
+          506.006,
+          507.539
+        ]
+      },
+      "ended": "2026-08-15T02:44:29.307203Z",
+      "fault_window": {
+        "configured_delay_ms": 500,
+        "tc_applied": true,
+        "ended": "2026-08-15T02:44:29.306390Z",
+        "deployment_ready_pre_scale": true,
+        "deployment_ready_post_scale": true
+      },
+      "events": 10,
+      "status": "PASS",
+      "violations": 0,
+      "suppressions": 0,
+      "resource_counts": {
+        "deployment": 4,
+        "replicaset": 3,
+        "pod": 3
+      },
+      "event_type_counts": {
+        "UPDATE": 10
+      }
+    }
+  ]
+}

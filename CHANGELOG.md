@@ -6,7 +6,15 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 Prefer **SemVer** (`vX.Y.Z`) for blog / package / paper citations; see [`docs/TAGS.md`](docs/TAGS.md).
-Current public cite: **`v0.1.7`**.
+Current public cite: **`v0.1.8`**.
+
+## [0.1.8] — 2026-08-15
+
+### Added
+
+- Matrix archive `matrix/runs/20260815T023902Z/` — Lab Test denser-poll sensitivity (Kind v1.34.0; `--poll-interval 0.2`; E0/E1 × 3; 6/6 PASS).
+- [`results/dense-poll-gaps-20260815T023902Z.json`](results/dense-poll-gaps-20260815T023902Z.json) — gap p50s + \(d/T_{\text{eff}}\) detection-probability table.
+- [`MATRIX-ANALYSIS.md`](MATRIX-ANALYSIS.md) denser-poll section with inter-sweep comparison vs primary and \(P \approx d/T_{\text{eff}}\) rows.
 
 ## [0.1.7] — 2026-08-15
 
@@ -35,7 +43,7 @@ Current public cite: **`v0.1.7`**.
 
 ### Removed
 
-- Git tag `blog-kosv01-2026-07` deleted (2026-08-04). It was a pre-fault-reach / pre-O2-identity-fix snapshot and contradicted current identity contract. **Do not cite.** Use `v0.1.7`.
+- Git tag `blog-kosv01-2026-07` deleted (2026-08-04). It was a pre-fault-reach / pre-O2-identity-fix snapshot and contradicted current identity contract. **Do not cite.** Use `v0.1.8`.
 
 ## [0.1.5] — 2026-07-28
 
