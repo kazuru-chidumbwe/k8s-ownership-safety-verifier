@@ -4,7 +4,7 @@ Annotated tags mark reproducible anchors. The default branch may move after a ta
 
 | Tag | Commit | Purpose |
 | --- | --- | --- |
-| [`v0.1.7`](https://github.com/kazuru-chidumbwe/k8s-ownership-safety-verifier/releases/tag/v0.1.7) | *(this release)* | **Current cite** — `--poll-interval` denser-poll CLI · schema vocabulary · fixture smokes; includes primary matrix from v0.1.6 |
+| [`v0.1.7`](https://github.com/kazuru-chidumbwe/k8s-ownership-safety-verifier/releases/tag/v0.1.7) | $short | **Current cite** — `--poll-interval` denser-poll CLI · schema vocabulary · fixture smokes; includes primary matrix from v0.1.6 |
 | [`v0.1.6`](https://github.com/kazuru-chidumbwe/k8s-ownership-safety-verifier/releases/tag/v0.1.6) | `722ff70` | Primary matrix `20260814T083135Z` (Kind v1.34.0) · seeded violations script |
 | [`v0.1.5`](https://github.com/kazuru-chidumbwe/k8s-ownership-safety-verifier/releases/tag/v0.1.5) | `6c53e4e` | Calibration vs validation lock · superseded by v0.1.6 for matrix stamp |
 | [`v0.1.4`](https://github.com/kazuru-chidumbwe/k8s-ownership-safety-verifier/releases/tag/v0.1.4) | `c86b558` | Ordinary release-notes voice in TAGS |
@@ -16,7 +16,7 @@ Annotated tags mark reproducible anchors. The default branch may move after a ta
 
 **Removed (2026-08-04):** `blog-kosv01-2026-07` — superseded pre-fault-reach / pre-O2-fix snapshot. Do not cite. Use **`v0.1.7`**.
 
-Short hashes are what `git rev-parse --short <tag>^{commit}` reports for that tag. After cutting `v0.1.7`, replace *(this release)* with that short hash.
+Short hashes are what `git rev-parse --short <tag>^{commit}` reports for that tag. After cutting `v0.1.7`, replace $short with that short hash.
 
 ## Quick checkout
 
