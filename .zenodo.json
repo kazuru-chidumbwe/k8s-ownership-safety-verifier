@@ -1,0 +1,21 @@
+{
+  "title": "KOSV: Kubernetes Ownership Safety Verifier",
+  "upload_type": "software",
+  "description": "Trace-level measurement instrument for detecting specified ControllerRef ownership violations under a documented single-node Kind laboratory setup. Cite the SemVer release tag. Primary matrix 20260814T083135Z uses kindest/node:v1.34.0.",
+  "creators": [
+    {
+      "name": "Kazuru, Seke",
+      "affiliation": "Independent Researcher, Malawi",
+      "orcid": "0009-0002-4099-1059"
+    }
+  ],
+  "keywords": [
+    "Kubernetes",
+    "ownership safety",
+    "test oracle",
+    "fault injection",
+    "instrument validation"
+  ],
+  "license": "MIT",
+  "access_right": "open"
+}
