@@ -1,0 +1,27 @@
+{
+  "matrix_id": "20260814T083135Z",
+  "poll_interval_s": 1.0,
+  "kind_node": "kindest/node:v1.34.0",
+  "host": "Lab Test Server",
+  "status": "20/20 PASS",
+  "archive": "matrix/runs/20260814T083135Z/",
+  "sweep_gap_ms": 200.0,
+  "by_level": {
+    "E0": {
+      "poll_events": 97,
+      "same_obj_p50_ms": 1350,
+      "inter_sweep_p50_ms": 1135
+    },
+    "E1": {
+      "poll_events": 46,
+      "same_obj_p50_ms": 6236,
+      "inter_sweep_p50_ms": 2073
+    },
+    "E2": {
+      "poll_events": 35,
+      "same_obj_p50_ms": 59615,
+      "inter_sweep_p50_ms": 8070
+    }
+  },
+  "note": "Primary instrument-validation matrix for PeerJ Results / Table 1 / §4.3. Recompute: python experiments/analyze_poll_gaps.py matrix/runs/20260814T083135Z --levels E0,E1,E2"
+}

@@ -1,0 +1,10 @@
+{
+  "experiment_id": "SEEDED-O2-TRANSFER",
+  "expected": "FAIL",
+  "expected_oracle": "O2",
+  "arm": "seeded-o2-observation-injection",
+  "note": "RS controller races live transfer patches; seeded transfer in recorded trace from live pod snapshot",
+  "pod": "kosv-nginx-7d4f5d74cb-dx9jt",
+  "from_uid": "bb811e34-9bcc-493e-a2f8-6d39e7301941",
+  "to_uid": "00000000-0000-4000-8000-00000000o2se"
+}

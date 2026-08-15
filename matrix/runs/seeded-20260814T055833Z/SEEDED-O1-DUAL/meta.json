@@ -1,0 +1,8 @@
+{
+  "experiment_id": "SEEDED-O1-DUAL",
+  "expected": "FAIL",
+  "expected_oracle": "O1",
+  "arm": "seeded-o1-observation-injection",
+  "note": "API rejects dual controller=true via kubectl patch; seeded in recorded trace from live pod snapshot",
+  "pod": "kosv-nginx-7d4f5d74cb-mz8hk"
+}

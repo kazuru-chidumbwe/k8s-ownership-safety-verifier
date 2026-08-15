@@ -24,9 +24,15 @@
 | E2 | 2000ms delay | 5 | PASS | 7–7 | ~2003 | **yes** |
 | E3 | clean CM restart (steady state) | 5 | PASS | 15–17 | ~0.9 | yes |
 
-Matrix id: `matrix/runs/20260814T083135Z/` — each run has `trace.jsonl`, `report.json`, `meta.json`, `proxy-latency.json`.
+Matrix id: `matrix/runs/20260814T083135Z/` — each run has `trace.jsonl`, `report.json`, `meta.json`, `proxy-latency.json`. **Committed in the public repo from tag `v0.1.9` onward** (Lab Test archive). Gap summary: [`results/primary-poll-gaps-20260814T083135Z.json`](results/primary-poll-gaps-20260814T083135Z.json).
+
+```bash
+python experiments/analyze_poll_gaps.py matrix/runs/20260814T083135Z --levels E0,E1,E2
+```
 
 **Historical matrix:** `20260726T210257Z` (Kind v1.31.6) superseded by this primary stamp for paper and README cite.
+
+**Seeded live-trace arms:** `matrix/runs/seeded-20260814T055833Z/` (2/2 detection; observation-layer).
 
 **Denser-poll sensitivity check:** `20260815T023902Z` (Lab Test; Kind v1.34.0; `--poll-interval 0.2`; E0/E1 × 3; 6/6 PASS) — see section below. Not a replacement for the twenty-run primary matrix.
 

@@ -1,0 +1,5 @@
+{
+  "experiment_id": "SEEDED-BASELINE",
+  "expected": "PASS",
+  "arm": "baseline"
+}

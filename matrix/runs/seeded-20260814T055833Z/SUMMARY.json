@@ -1,0 +1,24 @@
+{
+  "matrix_id": "seeded-20260814T055833Z",
+  "seeded_violations_detected": "2/2",
+  "results": [
+    {
+      "id": "SEEDED-BASELINE",
+      "expected": "PASS",
+      "observed": "PASS",
+      "ok": true
+    },
+    {
+      "id": "SEEDED-O1-DUAL",
+      "expected": "FAIL",
+      "observed": "FAIL",
+      "ok": true
+    },
+    {
+      "id": "SEEDED-O2-TRANSFER",
+      "expected": "FAIL",
+      "observed": "FAIL",
+      "ok": true
+    }
+  ]
+}

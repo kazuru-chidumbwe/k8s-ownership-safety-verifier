@@ -1,0 +1,31 @@
+{
+  "status": "FAIL",
+  "trace_id": "SEEDED-O2-TRANSFER",
+  "events": 4,
+  "violations": [
+    {
+      "oracle": "O2",
+      "object_key": "pod/kosv-seed-o2/kosv-nginx-7d4f5d74cb-dx9jt",
+      "uid": "f5c7b377-7c12-43d2-a7d2-58f9a80a3b41",
+      "detail": "ControllerRef changed A->B without intervening orphan or DELETE",
+      "event_index": 3,
+      "previous_controller": "bb811e34-9bcc-493e-a2f8-6d39e7301941",
+      "new_controller": "00000000-0000-4000-8000-00000000o2se"
+    }
+  ],
+  "suppressions": [],
+  "notes": [],
+  "event_type_counts": {
+    "UPDATE": 3,
+    "MODIFIED": 1
+  },
+  "resource_counts": {
+    "deployment": 1,
+    "replicaset": 1,
+    "pod": 2
+  },
+  "caveats": [
+    "O1 is incomplete under poll/watch gaps; PASS does not prove absence of short-lived dual-owner states.",
+    "Events are evaluated in time order; no pre-O1 dedup of same resourceVersion."
+  ]
+}

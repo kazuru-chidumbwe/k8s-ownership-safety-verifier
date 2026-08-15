@@ -6,7 +6,19 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 Prefer **SemVer** (`vX.Y.Z`) for blog / package / paper citations; see [`docs/TAGS.md`](docs/TAGS.md).
-Current public cite: **`v0.1.8`**.
+Current public cite: **`v0.1.9`**.
+
+## [0.1.9] — 2026-08-15
+
+### Added
+
+- Primary matrix archive `matrix/runs/20260814T083135Z/` (20/20 PASS; Kind v1.34.0; Lab Test) — the submit Results stamp.
+- Seeded live-trace archive `matrix/runs/seeded-20260814T055833Z/`.
+- [`results/primary-poll-gaps-20260814T083135Z.json`](results/primary-poll-gaps-20260814T083135Z.json).
+
+### Changed
+
+- [`MATRIX-ANALYSIS.md`](MATRIX-ANALYSIS.md): primary stamp is now a committed archive path, not docs-only.
 
 ## [0.1.8] — 2026-08-15
 
@@ -43,7 +55,7 @@ Current public cite: **`v0.1.8`**.
 
 ### Removed
 
-- Git tag `blog-kosv01-2026-07` deleted (2026-08-04). It was a pre-fault-reach / pre-O2-identity-fix snapshot and contradicted current identity contract. **Do not cite.** Use `v0.1.8`.
+- Git tag `blog-kosv01-2026-07` deleted (2026-08-04). It was a pre-fault-reach / pre-O2-identity-fix snapshot and contradicted current identity contract. **Do not cite.** Use `v0.1.9`.
 
 ## [0.1.5] — 2026-07-28
 
