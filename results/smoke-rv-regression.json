@@ -1,0 +1,28 @@
+{
+  "status": "INCONCLUSIVE",
+  "trace_id": "rv-regression-inconclusive",
+  "events": 2,
+  "violations": [],
+  "suppressions": [
+    {
+      "reason": "resourceVersion_regression",
+      "object_key": "pod/kosv/nginx-rv",
+      "uid": "pod-uid-rv",
+      "event_index": 1,
+      "detail": "rv 100 -> 99; marked continuity gap"
+    }
+  ],
+  "notes": [
+    "INCONCLUSIVE: 1 resourceVersion continuity issue(s); no O1/O2 FAIL"
+  ],
+  "event_type_counts": {
+    "UPDATE": 2
+  },
+  "resource_counts": {
+    "pod": 2
+  },
+  "caveats": [
+    "O1 is incomplete under poll/watch gaps; PASS does not prove absence of short-lived dual-owner states.",
+    "Events are evaluated in time order; no pre-O1 dedup of same resourceVersion."
+  ]
+}

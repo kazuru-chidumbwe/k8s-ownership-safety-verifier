@@ -10,6 +10,17 @@ Current public cite: **`v0.1.6`**.
 
 ## Unreleased
 
+### Added
+
+- `experiments/run_matrix.py --poll-interval` (default `1.0`; denser sensitivity e.g. `0.2`). SUMMARY records `poll_interval_s` / `poll_seconds`.
+- Fixture smokes: missing-UID skip, RV-regression INCONCLUSIVE, O2 delete-then-new-UID.
+- `CITATION.cff` for GitHub citation metadata (pins `v0.1.6`).
+
+### Changed
+
+- [`docs/SCHEMA.md`](docs/SCHEMA.md): explicit ADDED/MODIFIED/DELETED/UPDATE vocabulary; `(resource, uid)` note for versions/CRDs/aggregated APIs.
+- Smoke summary `report` paths are repo-relative (no host absolute paths).
+
 ## [0.1.6] — 2026-08-14
 
 ### Added

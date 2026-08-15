@@ -1,0 +1,23 @@
+{
+  "status": "PASS",
+  "trace_id": "o2-delete-then-new-uid",
+  "events": 3,
+  "violations": [],
+  "suppressions": [],
+  "notes": [
+    "O1 PASS; O2 PASS",
+    "Caveat: PASS does not prove absence of unobserved short-lived dual-owner states"
+  ],
+  "event_type_counts": {
+    "UPDATE": 1,
+    "DELETED": 1,
+    "ADDED": 1
+  },
+  "resource_counts": {
+    "pod": 3
+  },
+  "caveats": [
+    "O1 is incomplete under poll/watch gaps; PASS does not prove absence of short-lived dual-owner states.",
+    "Events are evaluated in time order; no pre-O1 dedup of same resourceVersion."
+  ]
+}

@@ -12,11 +12,20 @@ Normalized ownership events are newline-delimited JSON (**JSONL**). One object p
 | `name` | string | yes | Object name |
 | `uid` | string | yes | Kubernetes object UID; O1/O2 object identity is `(resource, uid)` |
 | `resourceVersion` | string | yes | API `resourceVersion` at observation |
-| `event` | string | yes | `ADDED` · `MODIFIED` · `DELETED` · `UPDATE` (poll) |
+| `event` | string | yes | Exactly one of: ADDED, MODIFIED, DELETED, UPDATE (see below) |
 | `owners` | array of owner objects | yes | Normalized `ownerReferences` (may be empty) |
 | `source` | string | yes | `poll` · `watch` · `fixture` |
 | `experiment_id` | string | yes | Stable experiment / run id (e.g. `E0-r01`, `SMOKE-O1`) |
 | `fault_state` | string | yes | Fault label at observation (e.g. `none`, `delay_500ms`, `delay_500ms+restart`) |
+
+**`event` vocabulary.** Allowed values are exactly ADDED, MODIFIED, DELETED, UPDATE.
+
+- **UPDATE** — emitted by the v0 poll collector for each object observed on a sweep.
+- **MODIFIED** — watch-style modification event (watch collector; also used by seeded live-trace arms).
+- **ADDED** / **DELETED** — create and delete style events (watch path and fixtures).
+- The verifier accepts the alias **DELETE** as equivalent to **DELETED**.
+
+MODIFIED and UPDATE are not synonyms: they distinguish watch-style modification from poll-observed presence between sweeps.
 
 ### Owner object
 
@@ -37,6 +46,8 @@ Normalized ownership events are newline-delimited JSON (**JSONL**). One object p
 ## Object identity
 
 Oracles key objects by **`(resource, uid)`**, not by name alone.
+
+Kubernetes assigns `uid` at creation; it is immutable for that object's lifetime and stable across API versions of the same object. The singular `resource` name is stable for built-ins. For multi-version CRDs / conversion webhooks, KOSV still keys on `(resource, uid)` (not `apiVersion`), so conversion does not fragment identity. Aggregated APIs that rematerialize one logical object under distinct resource names may need an explicit normalization map (out of scope for v0).
 
 ## Experiment metadata (alongside traces)
 

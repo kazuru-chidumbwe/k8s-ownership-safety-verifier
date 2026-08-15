@@ -176,6 +176,7 @@ def run_one(
     do_restart: bool,
     out_dir: Path,
     poll_seconds: float,
+    poll_interval: float = 1.0,
 ) -> dict:
     experiment_id = f"{experiment}-r{run_idx:02d}"
     run_dir = out_dir / experiment_id
@@ -192,6 +193,8 @@ def run_one(
         "run": run_idx,
         "delay_ms_configured": delay_ms,
         "controller_restart": do_restart,
+        "poll_interval_s": poll_interval,
+        "poll_seconds": poll_seconds,
         "started": utc_now(),
         "namespace": ns,
     }
@@ -237,7 +240,7 @@ spec:
     t0 = time.time()
     while time.time() - t0 < poll_seconds / 2:
         events.extend(poll_once(ns, experiment_id, fault_state, seen))
-        time.sleep(1.0)
+        time.sleep(poll_interval)
 
     ready1 = wait_deployment(ns, name)
     events.extend(poll_once(ns, experiment_id, fault_state, seen))
@@ -250,7 +253,7 @@ spec:
     t1 = time.time()
     while time.time() - t1 < poll_seconds / 2:
         events.extend(poll_once(ns, experiment_id, fault_state, seen))
-        time.sleep(1.0)
+        time.sleep(poll_interval)
     ready2 = wait_deployment(ns, name)
     events.extend(poll_once(ns, experiment_id, fault_state, seen))
 
@@ -288,6 +291,12 @@ def main() -> int:
     p = argparse.ArgumentParser()
     p.add_argument("--out", type=Path, default=ROOT / "matrix" / "runs")
     p.add_argument("--poll-seconds", type=float, default=30.0)
+    p.add_argument(
+        "--poll-interval",
+        type=float,
+        default=1.0,
+        help="Sleep seconds between poll sweeps (default 1.0; use 0.2 for denser sensitivity)",
+    )
     p.add_argument("--only", default="", help="Comma experiments e.g. E0,E1")
     p.add_argument(
         "--runs",
@@ -299,6 +308,8 @@ def main() -> int:
 
     if args.runs < 1:
         raise SystemExit("--runs must be >= 1")
+    if args.poll_interval <= 0:
+        raise SystemExit("--poll-interval must be > 0")
 
     stamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
     out_dir = args.out / stamp
@@ -318,10 +329,22 @@ def main() -> int:
     results = []
     for experiment, delay, restart, n_runs in plan:
         for i in range(1, n_runs + 1):
-            results.append(run_one(experiment, i, delay, restart, out_dir, args.poll_seconds))
+            results.append(
+                run_one(
+                    experiment,
+                    i,
+                    delay,
+                    restart,
+                    out_dir,
+                    args.poll_seconds,
+                    poll_interval=args.poll_interval,
+                )
+            )
 
     summary = {
         "matrix_id": stamp,
+        "poll_interval_s": args.poll_interval,
+        "poll_seconds": args.poll_seconds,
         "runs": len(results),
         "runs_per_cell": n,
         "by_status": {},

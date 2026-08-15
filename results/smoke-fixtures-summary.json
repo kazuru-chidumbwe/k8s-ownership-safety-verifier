@@ -2,21 +2,36 @@
   {
     "case": "o1-dual-controller.jsonl",
     "runner_exit": 0,
-    "report": "D:\\Project Atlas\\repos\\k8s-ownership-safety-verifier\\results\\smoke-o1.json"
+    "report": "results/smoke-o1.json"
   },
   {
     "case": "o2-unintended-transfer.jsonl",
     "runner_exit": 0,
-    "report": "D:\\Project Atlas\\repos\\k8s-ownership-safety-verifier\\results\\smoke-o2.json"
+    "report": "results/smoke-o2.json"
   },
   {
     "case": "o2-intended-orphan-then-adopt.jsonl",
     "runner_exit": 0,
-    "report": "D:\\Project Atlas\\repos\\k8s-ownership-safety-verifier\\results\\smoke-o2-intended.json"
+    "report": "results/smoke-o2-intended.json"
   },
   {
     "case": "o2-cross-resource-shared-uid.jsonl",
     "runner_exit": 0,
-    "report": "D:\\Project Atlas\\repos\\k8s-ownership-safety-verifier\\results\\smoke-o2-cross-resource-uid.json"
+    "report": "results/smoke-o2-cross-resource-uid.json"
+  },
+  {
+    "case": "missing-uid-skip.jsonl",
+    "runner_exit": 0,
+    "report": "results/smoke-missing-uid.json"
+  },
+  {
+    "case": "rv-regression-inconclusive.jsonl",
+    "runner_exit": 0,
+    "report": "results/smoke-rv-regression.json"
+  },
+  {
+    "case": "o2-delete-then-new-uid.jsonl",
+    "runner_exit": 0,
+    "report": "results/smoke-o2-delete-new-uid.json"
   }
 ]

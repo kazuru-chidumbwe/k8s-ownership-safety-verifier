@@ -26,6 +26,13 @@ def main() -> int:
             RES / "smoke-o2-cross-resource-uid.json",
             ["--expect", "PASS"],
         ),
+        (FIX / "missing-uid-skip.jsonl", RES / "smoke-missing-uid.json", ["--expect", "PASS"]),
+        (
+            FIX / "rv-regression-inconclusive.jsonl",
+            RES / "smoke-rv-regression.json",
+            ["--expect", "INCONCLUSIVE"],
+        ),
+        (FIX / "o2-delete-then-new-uid.jsonl", RES / "smoke-o2-delete-new-uid.json", ["--expect", "PASS"]),
     ]
     failed = 0
     summary = []
@@ -35,7 +42,9 @@ def main() -> int:
         code = subprocess.run(cmd).returncode
         if code != 0:
             failed += 1
-        summary.append({"case": trace.name, "runner_exit": code, "report": str(out)})
+        summary.append(
+            {"case": trace.name, "runner_exit": code, "report": str(out.relative_to(ROOT)).replace("\\", "/")}
+        )
     (RES / "smoke-fixtures-summary.json").write_text(json.dumps(summary, indent=2) + "\n", encoding="utf-8")
     print(json.dumps(summary, indent=2))
     return 1 if failed else 0
