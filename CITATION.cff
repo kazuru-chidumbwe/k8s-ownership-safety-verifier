@@ -1,27 +1,23 @@
 cff-version: 1.2.0
-message: "If you use this software, please cite it as below."
+message: If you use this software, please cite it using these metadata.
 title: "KOSV: Kubernetes Ownership Safety Verifier"
-version: 0.1.10
-date-released: 2026-08-15
+version: 0.1.13
+date-released: "2026-08-15"
+type: software
 authors:
   - family-names: Kazuru
     given-names: Seke
-    orcid: https://orcid.org/0009-0002-4099-1059
-repository-code: https://github.com/kazuru-chidumbwe/k8s-ownership-safety-verifier
+    email: kazuruuni@gmail.com
+    orcid: "https://orcid.org/0009-0002-4099-1059"
+    affiliation: "Independent Researcher, Malawi"
 license: MIT
+repository-code: "https://github.com/kazuru-chidumbwe/k8s-ownership-safety-verifier"
+abstract: >-
+  Trace-level measurement instrument for detecting specified ControllerRef
+  ownership violations under a documented single-node Kind laboratory setup.
 keywords:
   - Kubernetes
   - ownership safety
   - test oracle
   - fault injection
   - instrument validation
-preferred-citation:
-  type: software
-  title: "KOSV: Kubernetes Ownership Safety Verifier"
-  authors:
-    - family-names: Kazuru
-      given-names: Seke
-  version: v0.1.10
-  year: 2026
-  url: https://github.com/kazuru-chidumbwe/k8s-ownership-safety-verifier
-  notes: "PeerJ CS manuscript in submission; mint Zenodo DOI before publication. Primary matrix 20260814T083135Z records kindest/node:v1.34.0 in cluster.json."
