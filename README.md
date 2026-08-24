@@ -4,7 +4,7 @@ Research instrument for measuring Kubernetes ownership safety (`ownerReferences`
 
 KOSV is aimed at researchers studying controller / ownership correctness under controlled conditions. It is not an operator dashboard and does not claim that Kubernetes is safe or unsafe.
 
-License: MIT · SoftwareX gate file: [`Licence.txt`](Licence.txt) (same text as [`LICENSE`](LICENSE))
+License: MIT · Duplicate license filename for venue packaging: [`Licence.txt`](Licence.txt) (same text as [`LICENSE`](LICENSE))
 
 ## Quick Start (3 steps)
 
@@ -13,7 +13,7 @@ License: MIT · SoftwareX gate file: [`Licence.txt`](Licence.txt) (same text as 
 ```bash
 git clone https://github.com/kazuru-chidumbwe/k8s-ownership-safety-verifier.git
 cd k8s-ownership-safety-verifier
-git checkout v0.1.16   # package cite pin
+git checkout v0.1.17   # package cite pin
 
 make smoke-fixtures
 ```
@@ -34,7 +34,7 @@ Requires Docker, `kind`, and `kubectl`. Kind is a **laboratory** cluster only; s
 ```text
 Seke Kazuru. KOSV: Kubernetes Ownership Safety Verifier.
 https://github.com/kazuru-chidumbwe/k8s-ownership-safety-verifier
-Tag: v0.1.16
+Tag: v0.1.17
 https://doi.org/10.5281/zenodo.21950899
 ```
 

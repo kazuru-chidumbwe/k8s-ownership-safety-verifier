@@ -6,7 +6,20 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 Prefer **SemVer** (`vX.Y.Z`) for blog / package / paper citations; see [`docs/TAGS.md`](docs/TAGS.md).
-Current public cite: **`v0.1.16`**.
+Current public cite: **`v0.1.16`**. Next cite candidate after breadth archives land: **`v0.1.17`**.
+
+## [Unreleased]
+
+### Added
+
+- StatefulSet / Kind v1.35 breadth archives and runner path switch (pending deposit on a later tag).
+
+## [0.1.17] — 2026-08-24
+
+### Changed
+
+- Public docs: PeerJ CS venue branding (removed SoftwareX leftovers); nalyze_poll_gaps.py cites PeerJ CS §4.3(B).
+- Cite-pin docs (README, REPRODUCTION, TAGS, CITATION.cff) aligned so the frozen tag matches default-branch pin text.
 
 ## [0.1.16] — 2026-08-15
 

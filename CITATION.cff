@@ -1,8 +1,8 @@
 cff-version: 1.2.0
 message: If you use this software, please cite it using these metadata.
 title: "KOSV: Kubernetes Ownership Safety Verifier"
-version: 0.1.16
-date-released: "2026-08-15"
+version: 0.1.17
+date-released: "2026-08-24"
 type: software
 authors:
   - family-names: Kazuru
