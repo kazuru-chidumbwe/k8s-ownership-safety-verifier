@@ -4,7 +4,7 @@ Annotated tags mark reproducible anchors. The default branch may move after a ta
 
 | Tag | Commit | Purpose |
 | --- | --- | --- |
-| [0.1.17](https://github.com/kazuru-chidumbwe/k8s-ownership-safety-verifier/releases/tag/v0.1.17) | __COMMIT__ | **Current cite** — PeerJ CS; SoftX branding scrub; cite-pin docs match tag |
+| [0.1.17](https://github.com/kazuru-chidumbwe/k8s-ownership-safety-verifier/releases/tag/v0.1.17) | dd9fbbc | **Current cite** — PeerJ CS; SoftX branding scrub; cite-pin docs match tag |
 | [0.1.16](https://github.com/kazuru-chidumbwe/k8s-ownership-safety-verifier/releases/tag/v0.1.16) | 15efc98 | Prior cite — Zenodo archive (10.5281/zenodo.21950899); same tree as 0.1.15 |
 | [0.1.15](https://github.com/kazuru-chidumbwe/k8s-ownership-safety-verifier/releases/tag/v0.1.15) | 15efc98 | CITATION.cff Zenodo-working pattern |
 | [0.1.14](https://github.com/kazuru-chidumbwe/k8s-ownership-safety-verifier/releases/tag/v0.1.14) | 647b7f7 | Zenodo license metadata |
