@@ -12,11 +12,11 @@ authors:
     affiliation: "Independent Researcher, Malawi"
 license: MIT
 repository-code: "https://github.com/kazuru-chidumbwe/k8s-ownership-safety-verifier"
-url: "https://doi.org/10.5281/zenodo.22081887"
+url: "https://doi.org/10.5281/zenodo.22081925"
 identifiers:
   - type: doi
-    value: 10.5281/zenodo.22081887
-    description: "This version (Zenodo record for GitHub tag v0.1.20; v0.1.21 ships the matching DOI in CITATION.cff)"
+    value: 10.5281/zenodo.22081925
+    description: "This version"
   - type: doi
     value: 10.5281/zenodo.21950898
     description: "All versions (concept DOI)"
