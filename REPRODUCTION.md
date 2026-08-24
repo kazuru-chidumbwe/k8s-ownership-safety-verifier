@@ -9,7 +9,7 @@ This file is a **template** until a third-party row is filled. An empty table is
 ```bash
 git clone https://github.com/kazuru-chidumbwe/k8s-ownership-safety-verifier.git
 cd k8s-ownership-safety-verifier
-git checkout v0.1.20   # package cite pin (PeerJ CS)
+git checkout v0.1.21   # package cite pin (PeerJ CS)
 
 make smoke-fixtures
 # Optional (needs Docker + kind + kubectl):
@@ -26,7 +26,7 @@ Then fill the table below and open a PR (or send the filled file to the author).
 | Date (UTC) | |
 | Machine / OS | |
 | Python version | |
-| Git tag / commit | `v0.1.20` |
+| Git tag / commit | `v0.1.21` |
 | `make smoke-fixtures` exit code | |
 | Notable output (PASS/FAIL lines) | |
 | `make smoke-kind` attempted? | yes / no |

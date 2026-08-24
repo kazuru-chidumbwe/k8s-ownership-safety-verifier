@@ -13,7 +13,7 @@ License: MIT · Duplicate license filename for venue packaging: [`Licence.txt`](
 ```bash
 git clone https://github.com/kazuru-chidumbwe/k8s-ownership-safety-verifier.git
 cd k8s-ownership-safety-verifier
-git checkout v0.1.20   # package cite pin
+git checkout v0.1.21   # package cite pin
 
 make smoke-fixtures
 ```
@@ -34,11 +34,11 @@ Requires Docker, `kind`, and `kubectl`. Kind is a **laboratory** cluster only; s
 ```text
 Seke Kazuru. KOSV: Kubernetes Ownership Safety Verifier.
 https://github.com/kazuru-chidumbwe/k8s-ownership-safety-verifier
-Tag: v0.1.20
-https://doi.org/10.5281/zenodo.22081581
+Tag: v0.1.21
+https://doi.org/10.5281/zenodo.22081887
 ```
 
-Methodology / package cite: **`v0.1.20`** (same matrices and fault-reach as `v0.1.19`; `CITATION.cff` in the tag tree carries version DOI `10.5281/zenodo.22081581`). See [`docs/TAGS.md`](docs/TAGS.md). The old essay tag `blog-kosv01-2026-07` was deleted (superseded pre-fault-reach snapshot).
+Methodology / package cite: **`v0.1.21`** (same matrices and fault-reach as `v0.1.19`/`v0.1.20`; `CITATION.cff` matches Zenodo `10.5281/zenodo.22081887`). See [`docs/TAGS.md`](docs/TAGS.md). The old essay tag `blog-kosv01-2026-07` was deleted (superseded pre-fault-reach snapshot).
 
 **Primary validation matrix (lab):** id **`20260814T083135Z`**, Kind **`kindest/node:v1.34.0`**, **20/20 PASS** O1/O2 under stated faults. Breadth: StatefulSet `20260823T123056Z` (v1.34.0) and Deployment on Kind v1.35 `20260824T100725Z` (each 20/20 PASS). Run locally with `make matrix` / `make matrix-statefulset` / `make matrix-v135`. Analysis: [`MATRIX-ANALYSIS.md`](MATRIX-ANALYSIS.md). Host `delay_proxy` self-tests in each run are **tool calibration**; O1/O2 PASS/FAIL outcomes are **instrument validation**.
 
