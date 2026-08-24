@@ -6,7 +6,19 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 Prefer **SemVer** (`vX.Y.Z`) for blog / package / paper citations; see [`docs/TAGS.md`](docs/TAGS.md).
-Current public cite: **`v0.1.18`**.
+Current public cite: **`v0.1.19`**.
+
+## [0.1.19] — 2026-08-24
+
+### Added
+
+- Version-matched fault-reach captures on the primary and confirmation Kind images:
+  - `docs/evidence/fault-reach-20260824-v134/` — `kindest/node:v1.34.0` (host `kubectl` mean 1688.4 ms vs in-node 22.5 ms under 500 ms `eth0` netem; route `dev lo`)
+  - `docs/evidence/fault-reach-20260824-v135/` — `kindest/node:v1.35.0` (1650.4 ms vs 32.6 ms; same `lo` conclusion)
+
+### Changed
+
+- Threat-model and README evidence pointers include the 2026-08-24 stamps beside the historical 2026-07-27 capture.
 
 ## [0.1.18] — 2026-08-24
 

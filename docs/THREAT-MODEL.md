@@ -16,12 +16,7 @@
 
 On single-node Kind, `kube-controller-manager` reaches the API server at the node’s own address (e.g. `https://172.18.0.2:6443`). Linux delivers that traffic as **local** (`ip route get` → `dev lo`, cache `<local>`). A `tc netem` qdisc on **`eth0` therefore does not delay controller↔API traffic**.
 
-Verified on the kosv Kind node (lab, 2026-07-27; archived under `docs/evidence/fault-reach-2026-07-27/`):
-
-- `controller-manager.conf` server = node eth0 IP `:6443`
-- route to that IP = local via `lo`
-- under `tc qdisc … eth0 … netem delay 500ms`: host `kubectl` RTT jumps (~86 ms → ~1.6 s); in-node HTTPS to the same API address stays ~tens of ms
-- live `ss -tnp`: `kube-controller` sockets `172.18.0.2:* → 172.18.0.2:6443`
+Verified on the kosv Kind node (lab). Historical capture: `docs/evidence/fault-reach-2026-07-27/`. Version-matched captures on the primary and confirmation images: `docs/evidence/fault-reach-20260824-v134/` (`kindest/node:v1.34.0`; host `kubectl` mean 1688.4 ms vs in-node 22.5 ms under 500 ms `eth0` netem) and `docs/evidence/fault-reach-20260824-v135/` (`kindest/node:v1.35.0`; 1650.4 ms vs 32.6 ms). In both, `controller-manager.conf` server is the node `eth0` IP `:6443` and `ip route get` returns `dev lo` (`cache <local>`).
 
 v0 E1/E2 therefore study **collector-to-API observation delay** (external poller path), which matches KOSV’s poll-based collector architecture. They are **not** a claim of API↔controller informer delay. True controller↔API delay requires a different injector (e.g. `lo` netem or control-plane interception) and is future work.
 

@@ -4,7 +4,8 @@ Annotated tags mark reproducible anchors. The default branch may move after a ta
 
 | Tag | Commit | Purpose |
 | --- | --- | --- |
-| [`v0.1.18`](https://github.com/kazuru-chidumbwe/k8s-ownership-safety-verifier/releases/tag/v0.1.18) | `ab71e4e` | **Current cite** — PeerJ CS; StatefulSet path + Kind v1.35 matrices |
+| [`v0.1.19`](https://github.com/kazuru-chidumbwe/k8s-ownership-safety-verifier/releases/tag/v0.1.19) | *(filled at tag)* | **Current cite** — PeerJ CS; v0.1.18 matrices + version-matched fault-reach (v1.34/v1.35) |
+| [`v0.1.18`](https://github.com/kazuru-chidumbwe/k8s-ownership-safety-verifier/releases/tag/v0.1.18) | `0c2177f` | Prior cite — StatefulSet path + Kind v1.35 matrices (no 2026-08-24 fault-reach stamps) |
 | [`v0.1.17`](https://github.com/kazuru-chidumbwe/k8s-ownership-safety-verifier/releases/tag/v0.1.17) | `486e6ec` | SoftX branding scrub; Zenodo `10.5281/zenodo.22079811` (no breadth archives) |
 | [`v0.1.16`](https://github.com/kazuru-chidumbwe/k8s-ownership-safety-verifier/releases/tag/v0.1.16) | `15efc98` | Prior cite — Zenodo `10.5281/zenodo.21950899`; same tree as `v0.1.15` |
 | [`v0.1.15`](https://github.com/kazuru-chidumbwe/k8s-ownership-safety-verifier/releases/tag/v0.1.15) | `15efc98` | CITATION.cff Zenodo-working pattern |
@@ -25,14 +26,14 @@ Annotated tags mark reproducible anchors. The default branch may move after a ta
 | [`v0.1.0`](https://github.com/kazuru-chidumbwe/k8s-ownership-safety-verifier/releases/tag/v0.1.0) | `d054f47` | First SemVer release |
 | [`preanalysis-scale1000-2026-07-27`](https://github.com/kazuru-chidumbwe/k8s-ownership-safety-verifier/tree/preanalysis-scale1000-2026-07-27) | `a984600` | Pre-analysis scale pin |
 
-**Removed (2026-08-04):** `blog-kosv01-2026-07` — superseded pre-fault-reach / pre-O2-fix snapshot. Do not cite. Use **`v0.1.18`**.
+**Removed (2026-08-04):** `blog-kosv01-2026-07` — superseded pre-fault-reach / pre-O2-fix snapshot. Do not cite. Use **`v0.1.19`**.
 
 Short hashes are what `git rev-parse --short <tag>^{commit}` reports for that tag.
 
 ## Quick checkout
 
 ```bash
-git checkout v0.1.18
+git checkout v0.1.19
 make smoke-fixtures
 python experiments/analyze_poll_gaps.py matrix/runs/20260814T083135Z --levels E0,E1,E2
 ```

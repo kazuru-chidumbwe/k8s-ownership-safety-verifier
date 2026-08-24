@@ -1,7 +1,7 @@
 cff-version: 1.2.0
 message: If you use this software, please cite it using these metadata.
 title: "KOSV: Kubernetes Ownership Safety Verifier"
-version: 0.1.18
+version: 0.1.19
 date-released: "2026-08-24"
 type: software
 authors:
@@ -12,14 +12,11 @@ authors:
     affiliation: "Independent Researcher, Malawi"
 license: MIT
 repository-code: "https://github.com/kazuru-chidumbwe/k8s-ownership-safety-verifier"
-url: "https://doi.org/10.5281/zenodo.22080114"
+url: "https://doi.org/10.5281/zenodo.21950898"
 identifiers:
   - type: doi
-    value: 10.5281/zenodo.22080114
-    description: "This version"
-  - type: doi
     value: 10.5281/zenodo.21950898
-    description: "All versions (concept DOI)"
+    description: "All versions (concept DOI); replace with version DOI after Zenodo mints v0.1.19"
 abstract: >-
   Trace-level measurement instrument for detecting specified ControllerRef
   ownership violations under a documented single-node Kind laboratory setup.

@@ -1,0 +1,17 @@
+{
+  "captured_utc": "2026-08-24T12:52:48Z",
+  "host": "kosv-lab-01",
+  "cluster": "kosv",
+  "kind_node_image": "kindest/node:v1.35.0",
+  "kubelet_version": "Kubernetes v1.35.0",
+  "fault": "tc qdisc replace dev eth0 root netem delay 500ms",
+  "controller_manager_server": "https://172.19.0.2:6443",
+  "route_line": "local 172.19.0.2 dev lo src 172.19.0.2 uid 0 ",
+  "path_class": "own_eth0_ip_local_delivery_via_lo",
+  "eth0_netem_delays_controller_api": false,
+  "eth0_netem_delays_host_collector": true,
+  "host_kubectl_mean_ms": 1650.4,
+  "innode_curl_mean_ms": 32.6,
+  "host_kubectl_samples_ms": [1696,1647,1641,1640,1696,1659,1633,1644,1629,1619],
+  "innode_curl_samples_ms": [81,15,17,108,19,17,18,14,17,20]
+}
