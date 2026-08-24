@@ -1,7 +1,7 @@
 cff-version: 1.2.0
 message: If you use this software, please cite it using these metadata.
 title: "KOSV: Kubernetes Ownership Safety Verifier"
-version: 0.1.19
+version: 0.1.20
 date-released: "2026-08-24"
 type: software
 authors:
@@ -16,7 +16,7 @@ url: "https://doi.org/10.5281/zenodo.22081581"
 identifiers:
   - type: doi
     value: 10.5281/zenodo.22081581
-    description: "This version"
+    description: "PeerJ CS archival version DOI (minted for v0.1.19). Tag v0.1.20 ships this DOI in CITATION.cff so the tagged tree matches the Zenodo record; matrices and fault-reach stamps are unchanged."
   - type: doi
     value: 10.5281/zenodo.21950898
     description: "All versions (concept DOI)"
