@@ -35,7 +35,7 @@ Requires Docker, `kind`, and `kubectl`. Kind is a **laboratory** cluster only; s
 Seke Kazuru. KOSV: Kubernetes Ownership Safety Verifier.
 https://github.com/kazuru-chidumbwe/k8s-ownership-safety-verifier
 Tag: v0.1.18
-Concept DOI: https://doi.org/10.5281/zenodo.21950898
+https://doi.org/10.5281/zenodo.22080114
 ```
 
 Methodology / package cite: **`v0.1.18`** (StatefulSet path + Kind v1.35 confirmation; primary `20260814T083135Z` + denser-poll + seeded; archives self-report Kind node image); see [`docs/TAGS.md`](docs/TAGS.md) and [`CITATION.cff`](CITATION.cff). Zenodo version DOI is recorded in `CITATION.cff` after mint. The old essay tag `blog-kosv01-2026-07` was deleted (superseded pre-fault-reach snapshot).
