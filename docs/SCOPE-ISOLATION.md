@@ -2,8 +2,8 @@
 
 | Item | v0 |
 | --- | --- |
-| Cluster | Kind, Kubernetes v1.31.x (`kindest/node:v1.31.6` for pinned matrix) |
-| Ownership path | Deployment → ReplicaSet → Pod |
+| Cluster | Kind, Kubernetes **v1.34.0** / **v1.35.0** (`kindest/node` pins in `deploy/kind/`) |
+| Ownership path | Deployment → ReplicaSet → Pod; **StatefulSet → Pod** (matrix `ownership_path` from `v0.1.18`) |
 | Collector | `kubectl` poll of `ownerReferences` into normalized JSONL ([SCHEMA.md](SCHEMA.md)) |
 | Poll interval (Kind smoke / 20-run matrix) | **1.0 s** sleep between sweeps (+ `kubectl` runtime) |
 | Fault surface | **`tc netem` on Kind node `eth0`** (delays **host collector ↔ API** egress/response path) · **`kube-controller-manager` restart** |
@@ -20,7 +20,7 @@
 
 - True API↔controller observation delay (`lo` netem or control-plane interception)  
 - O3/O4 belief-state measurement  
-- StatefulSet / Job / CronJob / custom operators  
+- DaemonSet / Job / CronJob / custom operators  
 - MAAS / Charmed Kubernetes / multi-control-plane  
 - Production-cluster claims  
 

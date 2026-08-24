@@ -1,0 +1,7 @@
+{
+  "kind_node_image": "kindest/node:v1.35.0",
+  "kubelet_version": "v1.35.0",
+  "kind_node_name": "kosv-control-plane",
+  "captured_at": "2026-08-24T10:07:25.138748Z",
+  "capture_method": "live"
+}

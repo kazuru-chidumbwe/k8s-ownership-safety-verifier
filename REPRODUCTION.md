@@ -9,7 +9,7 @@ This file is a **template** until a third-party row is filled. An empty table is
 ```bash
 git clone https://github.com/kazuru-chidumbwe/k8s-ownership-safety-verifier.git
 cd k8s-ownership-safety-verifier
-git checkout v0.1.17   # package cite pin (PeerJ CS)
+git checkout v0.1.18   # package cite pin (PeerJ CS)
 
 make smoke-fixtures
 # Optional (needs Docker + kind + kubectl):

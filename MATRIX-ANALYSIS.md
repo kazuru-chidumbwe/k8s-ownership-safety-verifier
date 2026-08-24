@@ -36,6 +36,10 @@ python experiments/analyze_poll_gaps.py matrix/runs/20260814T083135Z --levels E0
 
 **Denser-poll sensitivity check:** `20260815T023902Z` (Lab Test; Kind v1.34.0; `--poll-interval 0.2`; E0/E1 × 3; 6/6 PASS) — see section below. Not a replacement for the twenty-run primary matrix.
 
+**StatefulSet path matrix:** `20260823T123056Z` (Lab Test; Kind `v1.34.0`; `--path statefulset`; E0–E3 × 5; **20/20 PASS**).
+
+**Kind minor confirmation:** `20260824T100725Z` (Lab Test; Kind `kindest/node:v1.35.0`; Deployment path; E0–E3 × 5; **20/20 PASS**).
+
 ## Poll-gap signal (collector path)
 
 From `experiments/analyze_poll_gaps.py` on this matrix (`SWEEP_GAP_MS=200`):

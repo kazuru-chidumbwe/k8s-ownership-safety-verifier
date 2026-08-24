@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "trace_id": "E1-r02",
+  "events": 8,
+  "violations": [],
+  "suppressions": [],
+  "notes": [
+    "O1 PASS; O2 PASS",
+    "Caveat: PASS does not prove absence of unobserved short-lived dual-owner states"
+  ],
+  "event_type_counts": {
+    "UPDATE": 8
+  },
+  "resource_counts": {
+    "statefulset": 4,
+    "pod": 4
+  },
+  "caveats": [
+    "O1 is incomplete under poll/watch gaps; PASS does not prove absence of short-lived dual-owner states.",
+    "Events are evaluated in time order; no pre-O1 dedup of same resourceVersion."
+  ]
+}

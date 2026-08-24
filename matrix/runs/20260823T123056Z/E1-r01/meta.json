@@ -1,0 +1,83 @@
+{
+  "experiment_id": "E1-r01",
+  "experiment": "E1",
+  "run": 1,
+  "delay_ms_configured": 500,
+  "controller_restart": false,
+  "poll_interval_s": 1.0,
+  "poll_seconds": 28.0,
+  "started": "2026-08-23T12:33:48.054238Z",
+  "namespace": "kosv-e1-r01",
+  "ownership_path": "statefulset",
+  "kind_node_image": "kindest/node:v1.34.0",
+  "kubelet_version": "v1.34.0",
+  "cluster": {
+    "kind_node_image": "kindest/node:v1.34.0",
+    "kubelet_version": "v1.34.0",
+    "kind_node_name": "kosv-control-plane",
+    "captured_at": "2026-08-23T12:30:56.391555Z",
+    "capture_method": "live"
+  },
+  "proxy_latency": {
+    "n": 30,
+    "delay_ms_configured": 500.0,
+    "mean_ms": 503.334,
+    "p50_ms": 502.957,
+    "p95_ms": 504.975,
+    "p99_ms": 508.201,
+    "min_ms": 501.247,
+    "max_ms": 509.494,
+    "within_10pct": true,
+    "samples_ms": [
+      501.247,
+      501.698,
+      501.881,
+      502.198,
+      502.327,
+      502.458,
+      502.497,
+      502.509,
+      502.614,
+      502.629,
+      502.689,
+      502.893,
+      502.906,
+      502.923,
+      502.946,
+      502.969,
+      502.993,
+      502.999,
+      503.321,
+      503.342,
+      503.843,
+      503.878,
+      503.901,
+      503.916,
+      504.069,
+      504.402,
+      504.555,
+      504.9,
+      505.036,
+      509.494
+    ]
+  },
+  "ended": "2026-08-23T12:34:55.184939Z",
+  "fault_window": {
+    "configured_delay_ms": 500,
+    "tc_applied": true,
+    "ended": "2026-08-23T12:34:55.184205Z",
+    "rollout_ready_pre_scale": true,
+    "rollout_ready_post_scale": true
+  },
+  "events": 8,
+  "status": "PASS",
+  "violations": 0,
+  "suppressions": 0,
+  "resource_counts": {
+    "statefulset": 4,
+    "pod": 4
+  },
+  "event_type_counts": {
+    "UPDATE": 8
+  }
+}

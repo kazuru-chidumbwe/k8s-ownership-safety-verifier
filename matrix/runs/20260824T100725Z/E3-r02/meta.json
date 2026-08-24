@@ -1,0 +1,91 @@
+{
+  "experiment_id": "E3-r02",
+  "experiment": "E3",
+  "run": 2,
+  "delay_ms_configured": 0,
+  "controller_restart": true,
+  "poll_interval_s": 1.0,
+  "poll_seconds": 28.0,
+  "started": "2026-08-24T10:33:23.339601Z",
+  "namespace": "kosv-e3-r02",
+  "ownership_path": "deployment",
+  "kind_node_image": "kindest/node:v1.35.0",
+  "kubelet_version": "v1.35.0",
+  "cluster": {
+    "kind_node_image": "kindest/node:v1.35.0",
+    "kubelet_version": "v1.35.0",
+    "kind_node_name": "kosv-control-plane",
+    "captured_at": "2026-08-24T10:07:25.138748Z",
+    "capture_method": "live"
+  },
+  "proxy_latency": {
+    "n": 30,
+    "delay_ms_configured": 0.0,
+    "mean_ms": 3.471,
+    "p50_ms": 3.073,
+    "p95_ms": 5.976,
+    "p99_ms": 8.117,
+    "min_ms": 1.746,
+    "max_ms": 8.915,
+    "within_10pct": true,
+    "samples_ms": [
+      1.746,
+      1.973,
+      2.094,
+      2.174,
+      2.234,
+      2.241,
+      2.318,
+      2.328,
+      2.348,
+      2.566,
+      2.699,
+      2.7,
+      2.766,
+      2.968,
+      2.984,
+      3.163,
+      3.271,
+      3.311,
+      3.429,
+      3.484,
+      3.679,
+      3.832,
+      4.011,
+      4.082,
+      4.389,
+      5.005,
+      5.51,
+      5.746,
+      6.165,
+      8.915
+    ]
+  },
+  "ended": "2026-08-24T10:34:19.835697Z",
+  "fault_window": {
+    "configured_delay_ms": 0,
+    "tc_applied": false,
+    "restart": {
+      "fault": "controller_restart",
+      "start": "2026-08-24T10:33:42.218573Z",
+      "end": "2026-08-24T10:33:44.343213Z",
+      "stdout": "",
+      "returncode": 0
+    },
+    "ended": "2026-08-24T10:34:19.833914Z",
+    "rollout_ready_pre_scale": true,
+    "rollout_ready_post_scale": true
+  },
+  "events": 16,
+  "status": "PASS",
+  "violations": 0,
+  "suppressions": 0,
+  "resource_counts": {
+    "deployment": 6,
+    "replicaset": 5,
+    "pod": 5
+  },
+  "event_type_counts": {
+    "UPDATE": 16
+  }
+}

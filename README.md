@@ -13,7 +13,7 @@ License: MIT · Duplicate license filename for venue packaging: [`Licence.txt`](
 ```bash
 git clone https://github.com/kazuru-chidumbwe/k8s-ownership-safety-verifier.git
 cd k8s-ownership-safety-verifier
-git checkout v0.1.17   # package cite pin
+git checkout v0.1.18   # package cite pin
 
 make smoke-fixtures
 ```
@@ -34,13 +34,13 @@ Requires Docker, `kind`, and `kubectl`. Kind is a **laboratory** cluster only; s
 ```text
 Seke Kazuru. KOSV: Kubernetes Ownership Safety Verifier.
 https://github.com/kazuru-chidumbwe/k8s-ownership-safety-verifier
-Tag: v0.1.17
-https://doi.org/10.5281/zenodo.21950899
+Tag: v0.1.18
+Concept DOI: https://doi.org/10.5281/zenodo.21950898
 ```
 
-Methodology / package cite: **`v0.1.16`** (Zenodo https://doi.org/10.5281/zenodo.21950899; archives self-report `kindest/node:v1.34.0`; primary `20260814T083135Z` + denser-poll + seeded); see [`docs/TAGS.md`](docs/TAGS.md) and [`CITATION.cff`](CITATION.cff). The old essay tag `blog-kosv01-2026-07` was deleted (superseded pre-fault-reach snapshot).
+Methodology / package cite: **`v0.1.18`** (StatefulSet path + Kind v1.35 confirmation; primary `20260814T083135Z` + denser-poll + seeded; archives self-report Kind node image); see [`docs/TAGS.md`](docs/TAGS.md) and [`CITATION.cff`](CITATION.cff). Zenodo version DOI is recorded in `CITATION.cff` after mint. The old essay tag `blog-kosv01-2026-07` was deleted (superseded pre-fault-reach snapshot).
 
-**Primary validation matrix (lab):** id **`20260814T083135Z`**, Kind **`kindest/node:v1.34.0`**, **20/20 PASS** O1/O2 under stated faults. Run locally with `make matrix` (needs Docker/`kind`/`kubectl`). Analysis: [`MATRIX-ANALYSIS.md`](MATRIX-ANALYSIS.md). Host `delay_proxy` self-tests in each run are **tool calibration**; O1/O2 PASS/FAIL outcomes are **instrument validation**.
+**Primary validation matrix (lab):** id **`20260814T083135Z`**, Kind **`kindest/node:v1.34.0`**, **20/20 PASS** O1/O2 under stated faults. Breadth: StatefulSet `20260823T123056Z` (v1.34.0) and Deployment on Kind v1.35 `20260824T100725Z` (each 20/20 PASS). Run locally with `make matrix` / `make matrix-statefulset` / `make matrix-v135`. Analysis: [`MATRIX-ANALYSIS.md`](MATRIX-ANALYSIS.md). Host `delay_proxy` self-tests in each run are **tool calibration**; O1/O2 PASS/FAIL outcomes are **instrument validation**.
 
 **Seeded violation arms:** `python experiments/run_seeded_violations.py` (observation-layer O1/O2 injection; 2/2 detected on stamp `seeded-20260814T055833Z`).
 

@@ -6,20 +6,30 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 Prefer **SemVer** (`vX.Y.Z`) for blog / package / paper citations; see [`docs/TAGS.md`](docs/TAGS.md).
-Current public cite: **`v0.1.16`**. Next cite candidate after breadth archives land: **`v0.1.17`**.
+Current public cite: **`v0.1.18`**.
 
-## [Unreleased]
+## [0.1.18] — 2026-08-24
 
 ### Added
 
-- StatefulSet / Kind v1.35 breadth archives and runner path switch (pending deposit on a later tag).
+- `experiments/workload_paths.py` + `run_matrix.py --path {deployment,statefulset}`.
+- `deploy/kind/cluster-v1.35.yaml`; Makefile targets `matrix-statefulset`, `kind-up-v135`, `matrix-v135`.
+- Matrix archive `matrix/runs/20260823T123056Z/` — StatefulSet path, Kind v1.34.0, 20/20 PASS.
+- Matrix archive `matrix/runs/20260824T100725Z/` — Deployment path, Kind v1.35.0, 20/20 PASS.
+
+### Changed
+
+- Matrix runner: longer Ready waits under collector-path netem; kubectl scale/apply retries.
+- [`docs/SCOPE-ISOLATION.md`](docs/SCOPE-ISOLATION.md): StatefulSet path + Kind v1.34/v1.35 pins in scope.
+- Cite-pin docs aligned to `v0.1.18` / Zenodo version DOI (filled after mint).
 
 ## [0.1.17] — 2026-08-24
 
 ### Changed
 
-- Public docs: PeerJ CS venue branding (removed SoftwareX leftovers); nalyze_poll_gaps.py cites PeerJ CS §4.3(B).
-- Cite-pin docs (README, REPRODUCTION, TAGS, CITATION.cff) aligned so the frozen tag matches default-branch pin text.
+- Public docs: PeerJ CS venue branding (removed SoftwareX leftovers).
+- Cite-pin docs aligned so the frozen tag matches default-branch pin text.
+- Zenodo version DOI `10.5281/zenodo.22079811` (SoftX scrub tree; breadth archives land in `v0.1.18`).
 
 ## [0.1.16] — 2026-08-15
 
