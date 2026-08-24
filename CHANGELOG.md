@@ -6,7 +6,45 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 Prefer **SemVer** (`vX.Y.Z`) for blog / package / paper citations; see [`docs/TAGS.md`](docs/TAGS.md).
-Current public cite: **`v0.1.10`**.
+Current public cite: **`v0.1.16`**.
+
+## [0.1.16] — 2026-08-15
+
+### Added
+
+- GitHub↔Zenodo archive for the PeerJ CS cite pin (version DOI `10.5281/zenodo.21950899`).
+
+### Changed
+
+- Default-branch [`CITATION.cff`](CITATION.cff) records `version: 0.1.16` and the Zenodo identifiers. Tag `v0.1.16` is not moved.
+
+## [0.1.15] — 2026-08-15
+
+### Changed
+
+- [`CITATION.cff`](CITATION.cff) aligned to the Zenodo-working pattern used on other harnesses.
+
+## [0.1.14] — 2026-08-15
+
+### Changed
+
+- Zenodo license metadata (`mit`).
+
+## [0.1.13] — 2026-08-15
+
+### Changed
+
+- [`CITATION.cff`](CITATION.cff) affiliation; dropped `preferred-citation` for Zenodo ingest.
+
+## [0.1.12] — 2026-08-15
+
+Same commit as `v0.1.11`.
+
+## [0.1.11] — 2026-08-15
+
+### Added
+
+- Kind `kindest/node:v1.34.0` RepoDigest beside the archive pin.
 
 ## [0.1.10] — 2026-08-15
 
@@ -125,3 +163,15 @@ Current public cite: **`v0.1.10`**.
 [0.1.2]: https://github.com/kazuru-chidumbwe/k8s-ownership-safety-verifier/releases/tag/v0.1.2
 [0.1.3]: https://github.com/kazuru-chidumbwe/k8s-ownership-safety-verifier/releases/tag/v0.1.3
 [0.1.4]: https://github.com/kazuru-chidumbwe/k8s-ownership-safety-verifier/releases/tag/v0.1.4
+[0.1.5]: https://github.com/kazuru-chidumbwe/k8s-ownership-safety-verifier/releases/tag/v0.1.5
+[0.1.6]: https://github.com/kazuru-chidumbwe/k8s-ownership-safety-verifier/releases/tag/v0.1.6
+[0.1.7]: https://github.com/kazuru-chidumbwe/k8s-ownership-safety-verifier/releases/tag/v0.1.7
+[0.1.8]: https://github.com/kazuru-chidumbwe/k8s-ownership-safety-verifier/releases/tag/v0.1.8
+[0.1.9]: https://github.com/kazuru-chidumbwe/k8s-ownership-safety-verifier/releases/tag/v0.1.9
+[0.1.10]: https://github.com/kazuru-chidumbwe/k8s-ownership-safety-verifier/releases/tag/v0.1.10
+[0.1.11]: https://github.com/kazuru-chidumbwe/k8s-ownership-safety-verifier/releases/tag/v0.1.11
+[0.1.12]: https://github.com/kazuru-chidumbwe/k8s-ownership-safety-verifier/releases/tag/v0.1.12
+[0.1.13]: https://github.com/kazuru-chidumbwe/k8s-ownership-safety-verifier/releases/tag/v0.1.13
+[0.1.14]: https://github.com/kazuru-chidumbwe/k8s-ownership-safety-verifier/releases/tag/v0.1.14
+[0.1.15]: https://github.com/kazuru-chidumbwe/k8s-ownership-safety-verifier/releases/tag/v0.1.15
+[0.1.16]: https://github.com/kazuru-chidumbwe/k8s-ownership-safety-verifier/releases/tag/v0.1.16
