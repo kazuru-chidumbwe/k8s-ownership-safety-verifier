@@ -38,7 +38,7 @@ Tag: v0.1.18
 https://doi.org/10.5281/zenodo.22080114
 ```
 
-Methodology / package cite: **`v0.1.18`** (StatefulSet path + Kind v1.35 confirmation; primary `20260814T083135Z` + denser-poll + seeded; archives self-report Kind node image); see [`docs/TAGS.md`](docs/TAGS.md) and [`CITATION.cff`](CITATION.cff). Zenodo version DOI is recorded in `CITATION.cff` after mint. The old essay tag `blog-kosv01-2026-07` was deleted (superseded pre-fault-reach snapshot).
+Methodology / package cite: **`v0.1.18`** (StatefulSet path + Kind v1.35 confirmation; primary `20260814T083135Z` + denser-poll + seeded; archives self-report Kind node image); see [`docs/TAGS.md`](docs/TAGS.md) and [`CITATION.cff`](CITATION.cff). Zenodo https://doi.org/10.5281/zenodo.22080114. The old essay tag `blog-kosv01-2026-07` was deleted (superseded pre-fault-reach snapshot).
 
 **Primary validation matrix (lab):** id **`20260814T083135Z`**, Kind **`kindest/node:v1.34.0`**, **20/20 PASS** O1/O2 under stated faults. Breadth: StatefulSet `20260823T123056Z` (v1.34.0) and Deployment on Kind v1.35 `20260824T100725Z` (each 20/20 PASS). Run locally with `make matrix` / `make matrix-statefulset` / `make matrix-v135`. Analysis: [`MATRIX-ANALYSIS.md`](MATRIX-ANALYSIS.md). Host `delay_proxy` self-tests in each run are **tool calibration**; O1/O2 PASS/FAIL outcomes are **instrument validation**.
 
